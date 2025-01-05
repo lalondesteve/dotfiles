@@ -1,0 +1,35 @@
+    OpenRGB v0.9
+    Commit: b5f46e3f1de03595656c682fc2f068b66e735e63 from 2023-07-09 22:51:47 -0500
+    Launched: 20241229_165947
+====================================================================================================
+
+0     |Info:    Found file: blue.orp attempting to validate header
+0     |Info:    Valid v4 profile found for blue
+1005  |Info:    ------------------------------------------------------
+1005  |Info:    |               Start device detection               |
+1005  |Info:    ------------------------------------------------------
+1013  |Info:    Initializing HID interfaces: Success
+1021  |Info:    ------------------------------------------------------
+1021  |Info:    |             Detecting I2C interfaces               |
+1021  |Info:    ------------------------------------------------------
+1021  |Info:    ------------------------------------------------------
+1021  |Info:    |               Detecting I2C devices                |
+1021  |Info:    ------------------------------------------------------
+1021  |Info:    ------------------------------------------------------
+1021  |Info:    |               Detecting I2C PCI devices            |
+1021  |Info:    ------------------------------------------------------
+1022  |Info:    ------------------------------------------------------
+1022  |Info:    |               Detecting HID devices                |
+1022  |Info:    ------------------------------------------------------
+1059  |Info:    [KLM] Created new Full 104 key ANSI QWERTY with 6 rows and 21 columns containing 104 keys
+1059  |Info:    [Razer Blackwidow V3] Registering RGB controller
+1059  |Info:    ------------------------------------------------------
+1059  |Info:    |              Detecting other devices               |
+1059  |Info:    ------------------------------------------------------
+2086  |Info:    Exception occurred in Philips Hue detection: LinHttpHandler: gethostbyname
+2086  |Info:    ------------------------------------------------------
+2086  |Info:    |                Detection completed                 |
+2086  |Info:    ------------------------------------------------------
+116974|Info:    Profile loading: Succeeded for Razer Blackwidow V3 @ HID: DevSrvsID:4294982609
+119621|Info:    Profile loading: Succeeded for Razer Blackwidow V3 @ HID: DevSrvsID:4294982609
+120182|Info:    Profile loading: Succeeded for Razer Blackwidow V3 @ HID: DevSrvsID:4294982609

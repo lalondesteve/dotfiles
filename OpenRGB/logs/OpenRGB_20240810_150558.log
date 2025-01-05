@@ -1,0 +1,45 @@
+    OpenRGB v0.9
+    Commit: b5f46e3f1de03595656c682fc2f068b66e735e63 from 2023-07-09 22:51:47 -0500
+    Launched: 20240810_150558
+====================================================================================================
+
+0     |Info:    Found file: blue.orp attempting to validate header
+0     |Info:    Valid v4 profile found for blue
+1076  |Info:    ------------------------------------------------------
+1076  |Info:    |               Start device detection               |
+1076  |Info:    ------------------------------------------------------
+1086  |Info:    Initializing HID interfaces: Success
+1101  |Info:    ------------------------------------------------------
+1101  |Info:    |             Detecting I2C interfaces               |
+1101  |Info:    ------------------------------------------------------
+1101  |Info:    ------------------------------------------------------
+1101  |Info:    |               Detecting I2C devices                |
+1101  |Info:    ------------------------------------------------------
+1101  |Info:    ------------------------------------------------------
+1101  |Info:    |               Detecting I2C PCI devices            |
+1101  |Info:    ------------------------------------------------------
+1102  |Info:    ------------------------------------------------------
+1102  |Info:    |               Detecting HID devices                |
+1102  |Info:    ------------------------------------------------------
+1104  |Info:    ------------------------------------------------------
+1104  |Info:    |              Detecting other devices               |
+1104  |Info:    ------------------------------------------------------
+2190  |Info:    Exception occurred in Philips Hue detection: LinHttpHandler: gethostbyname
+2190  |Info:    ------------------------------------------------------
+2190  |Info:    |                Detection completed                 |
+2190  |Info:    ------------------------------------------------------
+----------------------------
+2146  |Info:    |                Detection completed                 |
+2146  |Info:    ------------------------------------------------------
+7127  |Info:    Profile loading: Succeeded for Razer Blackwidow V3 @ HID: DevSrvsID:4294984965
+73208 |Info:    Found file: blue.orp attempting to validate header
+73208 |Info:    Valid v4 profile found for blue
+78195 |Info:    Found file: blue.orp attempting to validate header
+78195 |Info:    Valid v4 profile found for blue
+80927 |Info:    Profile loading: Succeeded for Razer Blackwidow V3 @ HID: DevSrvsID:4294984965
+98622 |Info:    Profile loading: Succeeded for Razer Blackwidow V3 @ HID: DevSrvsID:4294984965
+684222|Info:    Profile loading: Succeeded for Razer Blackwidow V3 @ HID: DevSrvsID:4294984965
+761186958|Info:    Profile loading: Succeeded for Razer Blackwidow V3 @ HID: DevSrvsID:4294984965
+761201925|Info:    Profile loading: Succeeded for Razer Blackwidow V3 @ HID: DevSrvsID:4294984965
+761220363|Info:    Profile loading: Succeeded for Razer Blackwidow V3 @ HID: DevSrvsID:4294984965
+761220624|Info:    Profile loading: Succeeded for Razer Blackwidow V3 @ HID: DevSrvsID:4294984965

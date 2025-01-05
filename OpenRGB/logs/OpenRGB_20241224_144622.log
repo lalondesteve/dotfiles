@@ -1,0 +1,45 @@
+    OpenRGB v0.9
+    Commit: b5f46e3f1de03595656c682fc2f068b66e735e63 from 2023-07-09 22:51:47 -0500
+    Launched: 20241224_144622
+====================================================================================================
+
+0     |Info:    Found file: blue.orp attempting to validate header
+0     |Info:    Valid v4 profile found for blue
+1003  |Info:    ------------------------------------------------------
+1003  |Info:    |               Start device detection               |
+1003  |Info:    ------------------------------------------------------
+1007  |Info:    Initializing HID interfaces: Success
+1014  |Info:    ------------------------------------------------------
+1014  |Info:    |             Detecting I2C interfaces               |
+1014  |Info:    ------------------------------------------------------
+1014  |Info:    ------------------------------------------------------
+1014  |Info:    |               Detecting I2C devices                |
+1014  |Info:    ------------------------------------------------------
+1014  |Info:    ------------------------------------------------------
+1014  |Info:    |               Detecting I2C PCI devices            |
+1014  |Info:    ------------------------------------------------------
+1015  |Info:    ------------------------------------------------------
+1015  |Info:    |               Detecting HID devices                |
+1015  |Info:    ------------------------------------------------------
+1046  |Info:    [KLM] Created new Full 104 key ANSI QWERTY with 6 rows and 21 columns containing 104 keys
+1046  |Info:    [Razer Blackwidow V3] Registering RGB controller
+1046  |Info:    ------------------------------------------------------
+1046  |Info:    |              Detecting other devices               |
+1046  |Info:    ------------------------------------------------------
+2119  |Info:    Exception occurred in Philips Hue detection: LinHttpHandler: gethostbyname
+2120  |Info:    ------------------------------------------------------
+2120  |Info:    |                Detection completed                 |
+2120  |Info:    ------------------------------------------------------
+6691  |Info:    Profile loading: Succeeded for Razer Blackwidow V3 @ HID: DevSrvsID:4295168740
+54677 |Info:    Found file: blue.orp attempting to validate header
+54677 |Info:    Valid v4 profile found for blue
+214898|Info:    Profile loading: Succeeded for Razer Blackwidow V3 @ HID: DevSrvsID:4295168740
+265682|Info:    Found file: blue.orp attempting to validate header
+265683|Info:    Valid v4 profile found for blue
+279387|Info:    Found file: blue.orp attempting to validate header
+279387|Info:    Valid v4 profile found for blue
+310506|Info:    Found file: blue.orp attempting to validate header
+310506|Info:    Valid v4 profile found for blue
+318034|Info:    Found file: blue.orp attempting to validate header
+318034|Info:    Valid v4 profile found for blue
+198503136|Info:    Profile loading: Succeeded for Razer Blackwidow V3 @ HID: DevSrvsID:4295168740
