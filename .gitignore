@@ -2,5 +2,6 @@ configstore/*
 filezilla/*
 yarn/*
 wireshark/*
+*.log
 github-copilot/*
 

@@ -10,5 +10,3 @@ vim.g.lazyvim_python_lsp = "pyright"
 -- Set to "ruff_lsp" to use the old LSP implementation version.
 vim.g.lazyvim_python_ruff = "ruff"
 vim.g.netrw_banner = 0
-vim.cmd("nnoremap <C-d> <C-d> zz")
-vim.cmd("nnoremap <C-u> <C-u> zz")
