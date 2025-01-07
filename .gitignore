@@ -5,3 +5,11 @@ wireshark/*
 *.log
 github-copilot/*
 
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data
