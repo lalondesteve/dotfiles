@@ -3,6 +3,8 @@
 -- Add any additional keymaps here
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 vim.keymap.set("v", "<tab>", ">")
+vim.keymap.set("n", "<S-tab>", "<<")
+vim.keymap.set("n", "<tab>", ">>")
 vim.keymap.set("v", "<S-tab>", "<")
 vim.keymap.set("n", "<C-k>", ":m+1<CR>")
 vim.keymap.set("n", "<C-j>", ":m-2<CR>")

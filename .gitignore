@@ -4,6 +4,7 @@ yarn/*
 wireshark/*
 *.log
 github-copilot/*
+OpenRGB/*.log
 
 tt.*
 .tests
