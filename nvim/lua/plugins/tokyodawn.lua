@@ -4,7 +4,6 @@ end
 return {
     require("tokyonight").setup({
         style = "night",
-        styles = { functions = {} },
         on_colors = function(colors)
             colors.orange = "#FF9640"
             colors.magenta = "#eb75ce"
