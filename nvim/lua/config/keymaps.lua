@@ -1,12 +1,21 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
-vim.keymap.set("v", "<tab>", ">")
-vim.keymap.set("n", "<S-tab>", "<<")
-vim.keymap.set("n", "<tab>", ">>")
-vim.keymap.set("v", "<S-tab>", "<")
-vim.keymap.set("n", "<C-k>", ":m+1<CR>")
-vim.keymap.set("n", "<C-j>", ":m-2<CR>")
+local map = vim.keymap.set 
+
+map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
+map("n", "<leader>e", vim.cmd.Ex)
+-- move lines
+map({"n", "v", "x"}, "<C-j>", ":m'>+<cr>gv")
+map({"n", "v", "x"}, "<C-k>", ":m-2<cr>gv")
+-- move and zoom
 vim.cmd("nnoremap <C-d> <C-d> zz")
-vim.cmd("nnoremap <C-u> <C-u> zz")
+vim.cmd("nnoremap <C-n> <C-n> zz")
+-- intend with tab
+map("n", "<tab>", ">>")
+map("n", "<S-tab>", "<<")
+map("v", "<tab>", ">gv")
+map("v", "<S-tab>", "<gv")
+
+-- formatting
+-- map({ "n", "v" }, "<leader>cf", function()
+-- 	LazyVim.format({force=true})
+-- end, {desc="Format"})
+

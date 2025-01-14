@@ -1,3 +1,6 @@
+if true then
+    return {}
+end
 return {
     "saghen/blink.cmp",
     ---@module 'blink0.cmp'
