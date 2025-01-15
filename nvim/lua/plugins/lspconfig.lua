@@ -36,14 +36,25 @@ return {
 			-- ["rust_analyzer"] = function()
 			--   require("rust-tools").setup {}
 			-- end,
-      ["cssls"] = function()
-        local lspconfig = require("lspconfig")
-        lspconfig.cssls.setup({
-          settings = {
-            css = { validate = true, lint = { unknownAtRules = "ignore" }}
-        },
-      })
-      end,
+			["cssls"] = function()
+				local lspconfig = require("lspconfig")
+				lspconfig.cssls.setup({
+					settings = {
+						css = { validate = true, lint = { unknownAtRules = "ignore" } },
+					},
+				})
+			end,
+			["pyright"] = function()
+				require("lspconfig").pyright.setup({
+					python = {
+						disableOrganizeImports = true,
+						analysis = {
+							diagnosticsMode = "off",
+							typeCheckingMode = "standard",
+						},
+					},
+				})
+			end,
 			["lua_ls"] = function()
 				local lspconfig = require("lspconfig")
 				lspconfig.lua_ls.setup({

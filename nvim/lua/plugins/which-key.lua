@@ -9,21 +9,21 @@ return {
 			{ "<leader>l", desc = "Lazy" },
 			{ "<leader>t", desc = "Trouble" },
 			{ "<leader>e", desc = "File Explorer" },
-			{ "<leader><tab>", group = "tabs" },
-			{ "<leader>q", group = "quit/session" },
-			{ "<leader>f", group = "file/find" },
-			{ "<leader>c", group = "code" },
+			{ "<leader><tab>", group = "Tabs" },
+			{ "<leader>q", group = "Quit/Session" },
+			{ "<leader>f", group = "File/Find" },
+			{ "<leader>c", group = "Code" },
 			mode = { "n", "v" },
 			{
 				"<leader>b",
-				group = "buffer",
+				group = "Buffer",
 				expand = function()
 					return require("which-key.extras").expand.buf()
 				end,
 			},
 			{
 				"<leader>w",
-				group = "windows",
+				group = "Windows",
 				proxy = "<c-w>",
 				expand = function()
 					return require("which-key.extras").expand.win()

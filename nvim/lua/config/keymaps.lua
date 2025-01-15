@@ -1,7 +1,7 @@
 local map = vim.keymap.set 
 
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
-map("n", "<leader>e", vim.cmd.Ex)
+map("n", "<leader>e", vim.cmd.Ex, { desc = "File Explorer"})
 -- move lines
 map({"n", "v", "x"}, "<C-j>", ":m'>+<cr>gv")
 map({"n", "v", "x"}, "<C-k>", ":m-2<cr>gv")
@@ -18,7 +18,6 @@ map("v", "<S-tab>", "<gv")
 map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
-map("n", "<leader>br", vim.lsp.buf.rename, {desc = "Rename Buffer"})
 map("n", "<leader>bd", function()
   Snacks.bufdelete()
 end, { desc = "Delete Buffer" })

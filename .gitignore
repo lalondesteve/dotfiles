@@ -15,4 +15,4 @@ foo.*
 *.log
 data
 
-.__pycach*
+*__pycach*
