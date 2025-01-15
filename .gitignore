@@ -14,3 +14,5 @@ debug
 foo.*
 *.log
 data
+
+.__pycach*
