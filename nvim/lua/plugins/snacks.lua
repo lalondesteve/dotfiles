@@ -19,7 +19,7 @@ return {
   },
     -- stylua: ignore
   keys = {
-    { "<leader>n", function() Snacks.notifier.show_history() end, desc = "Notification History" },
+    { "<leader>nn", function() Snacks.notifier.show_history() end, desc = "Notification History" },
     { "<leader>nd", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
   },
 }

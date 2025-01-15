@@ -38,17 +38,19 @@ return {
 			-- end,
 			["cssls"] = function()
 				local lspconfig = require("lspconfig")
-				lspconfig.cssls.setup({
+				lspconfig.cssls.setup({ capabilities = capabilities }, {
 					settings = {
 						css = { validate = true, lint = { unknownAtRules = "ignore" } },
 					},
 				})
 			end,
-			["pyright"] = function()
-				require("lspconfig").pyright.setup({
+      -- using the variable so I can easily switch between pyright and basedpyright
+			["pyright"] = function(server_name)
+				require("lspconfig")[server_name].setup({ capabilities = capabilities }, {
 					python = {
 						disableOrganizeImports = true,
 						analysis = {
+							-- ignore = { '*' },
 							diagnosticsMode = "off",
 							typeCheckingMode = "standard",
 						},
@@ -57,7 +59,7 @@ return {
 			end,
 			["lua_ls"] = function()
 				local lspconfig = require("lspconfig")
-				lspconfig.lua_ls.setup({
+				lspconfig.lua_ls.setup({ capabilities = capabilities }, {
 					settings = {
 						Lua = {
 							runtime = { version = "Lua 5.1" },

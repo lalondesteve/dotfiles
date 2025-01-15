@@ -21,7 +21,7 @@ return {
 			"markdownlint-cli2",
 			"marksman",
 			"prettier",
-			-- "pyright",
+			"pyright",
 			-- "basedpyright",
 			"ruff",
 			-- "rust-analyzer",
