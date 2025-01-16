@@ -1,0 +1,113 @@
+// -*- mode: json -*-
+
+{
+	"layer": "top",
+	"position": "top",
+	"mode": "dock",
+
+	"modules-left": [
+		"hyprland/workspaces",
+		"custom/left-arrow-light",
+		"hyprland/window"
+	],
+	"modules-center": [
+		"custom/left-arrow-dark",
+		"clock#1",
+		"clock#2",
+		"clock#3",
+		"custom/right-arrow-dark"
+	],
+	"modules-right": [
+		"custom/right-arrow-light",
+		"pulseaudio",
+		"memory",
+		"cpu",
+		"disk",
+		"custom/updates",
+		"tray"
+
+	],
+
+	"custom/left-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"hyprland/workspaces": {
+		"disable-scroll": true,
+		"format": "{name}",
+		"on-click": "activate",
+		"persistent_workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": []
+		}
+	},
+    	"custom/updates": {
+        	"format": "Updates {}",
+        	"interval": 7200,                     
+        	"exec": "i=$(checkupdates); echo $i|tr -dc '>' |wc -c ; echo $i | tr ' ' '\n' | xargs -L 4 | awk '{print $1;}' |tr '\n' '\r' ",       // # of updates and tooltip details
+        	"on-click-right": "i=$(checkupdates); echo $i|tr -dc '>' |wc -c ; echo $i | tr ' ' '\n' | xargs -L 4 | awk '{print $1;}' |tr '\n' '\r' ",       // # of updates and tooltip details
+        	"exec-if": "exit 0",                  // always run; consider advanced run conditions
+        	"on-click": "kitty -e yay -Syu --noconfirm;i", // update system
+        	"signal": 8
+		
+    	},	
+	"clock#1": {
+		"format": "{:%d %B}",
+		"tooltip": false
+	},
+	"clock#2": {
+		"format": "{:%H:%M}",
+		"tooltip": false
+	},
+	"clock#3": {
+		"format": "{:%A}",
+		"tooltip": false
+	},
+
+	"pulseaudio": {
+		"format": "{icon}   {volume:2}%",
+		"format-bluetooth": "{icon}  {volume}%",
+		"format-muted": "MUTE",
+		"format-icons": {
+			"headphones": "",
+			"default": [
+				"",
+				""
+			]
+		},
+		"scroll-step": 5,
+		"on-click": "pamixer -t",
+		"on-click-right": "pavucontrol"
+	},
+	"memory": {
+		"interval": 5,
+		"format": "Mem {}%"
+	},
+	"cpu": {
+		"interval": 5,
+		"format": "CPU {usage:2}%"
+	},
+	"disk": {
+		"interval": 5,
+		"format": "Disk {percentage_used:2}%",
+		"path": "/"
+	},
+	"tray": {
+		"icon-size": 20
+	}
+}

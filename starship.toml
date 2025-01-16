@@ -10,21 +10,23 @@ $line_break\
 $python\
 $character"""
 
+palette = 'tokyodawn'
+
 [directory]
-style = "#eb66ca"
+style = "magenta"
 
 [character]
-success_symbol = "[❯](#c3e88d)"
-error_symbol = "[❯](#ff007c)"
-vimcmd_symbol = "[❮](#ff8723)"
+success_symbol = " [❯](#40d69b)"
+error_symbol = " [❯](#ff007c)"
+vimcmd_symbol = " [❮](#ff8723)"
 
 [git_branch]
 format = "[$branch]($style)"
-style = "#00afff"
+style = "cyan"
 
 [git_status]
 format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
-style = "#00afff"
+style = "cyan"
 # ahead = ">"
 # behind = "<"
 # diverged = "<>"
@@ -48,12 +50,23 @@ deleted = "[✕](italic red)"
 
 [git_state]
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
-style = "#ff8723"
+style = "orange"
 
 [cmd_duration]
 format = "[$duration]($style) "
-style = "#bb9af7"
+style = "yellow"
 
 [python]
 format = '(\([$virtualenv]($style)\) )'
-style = "#ffb723"
+style = 'orange'
+
+
+[palettes.tokyodawn]
+cyan = '#00afff'
+yellow = '#efef7f'
+green = '#40d69b'
+magenta = '#eb75ce'
+orange = '#ffb723'
+red = "#db4b4b"
+alert = "#cb62bd"
+
