@@ -1,6 +1,46 @@
+local function cssls_setup(config, capabilities)
+	config.cssls.setup({ capabilities = capabilities }, {
+		settings = {
+			css = { validate = true, lint = { unknownAtRules = "ignore" } },
+		},
+	})
+end
+
+-- local function ruff_setup(config, capabilities)
+-- 	config.ruff.setup(capabilities, {
+-- 		on_attach = function(client, _)
+-- 			local venv = vim.fn.system({ "$(uv python find)" })
+-- 			client.interpreter = venv
+-- 			client.notify(vim.lsp.workspace_didChangeConfiguration, { settings = client.config.settings })
+-- 			vim.echo("Hello")
+-- 		end,
+-- 		--
+-- 	})
+-- end
+
+local function pyright_setup(config, capabilities)
+	config.pyright.setup(capabilities, {
+		settings = {
+			pyright = {
+				disableOrganizeImports = true,
+				disableTaggedHints = true,
+			},
+			python = {
+				analysis = {
+					autoImportCompletion = true,
+					autoSearchPaths = true,
+					diagnosticMode = "off",
+					typeCheckingMode = "standard",
+				},
+			},
+		},
+	})
+end
+
 return {
 	"neovim/nvim-lspconfig",
 	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+	lazy = true,
 	dependencies = {
 		"mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
@@ -13,10 +53,7 @@ return {
 		"saadparwaiz1/cmp_luasnip",
 		"j-hui/fidget.nvim",
 	},
-
 	config = function()
-		require("conform").setup()
-		local cmp = require("cmp")
 		local cmp_lsp = require("cmp_nvim_lsp")
 		local capabilities = vim.tbl_deep_extend(
 			"force",
@@ -24,107 +61,27 @@ return {
 			vim.lsp.protocol.make_client_capabilities(),
 			cmp_lsp.default_capabilities()
 		)
-		-- https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#automatic-server-setup-advanced-feature
+		local lspconfig = require("lspconfig")
+
 		local handlers = {
-			-- The first entry (without a key) will be the default handler
-			-- and will be called for each installed server that doesn't have
-			-- a dedicated handler.
-			function(server_name) -- default handler (optional)
-				require("lspconfig")[server_name].setup({ capabilities = capabilities })
+			function(server_name)
+				lspconfig[server_name].setup({ capabilities = capabilities })
 			end,
-			-- Next, you can provide targeted overrides for specific servers.
-			-- ["rust_analyzer"] = function()
-			--   require("rust-tools").setup {}
-			-- end,
-			["cssls"] = function()
-				local lspconfig = require("lspconfig")
-				lspconfig.cssls.setup({ capabilities = capabilities }, {
-					settings = {
-						css = { validate = true, lint = { unknownAtRules = "ignore" } },
-					},
-				})
-			end,
-			-- using the variable so I can easily switch between pyright and basedpyright
-			["pyright"] = function(server_name)
-				require("lspconfig")[server_name].setup({ capabilities = capabilities }, {
-					settings = {
-						pyright = {
-							disableOrganizeImports = true,
-							disableTaggedHints = true,
-						},
-						python = {
-							analysis = {
-								-- ignore = { '*' },
-								diagnosticsMode = "off",
-								typeCheckingMode = "standard",
-							},
-						},
-					},
-				})
-			end,
-			["lua_ls"] = function()
-				local lspconfig = require("lspconfig")
-				lspconfig.lua_ls.setup({ capabilities = capabilities }, {
-					settings = {
-						Lua = {
-							runtime = { version = "Lua 5.1" },
-							diagnostics = {
-								globals = { "vim" },
-							},
-						},
-					},
-				})
-			end,
+			["cssls"] = cssls_setup(lspconfig, capabilities),
+			["pyright"] = pyright_setup(lspconfig, capabilities),
+			-- ["ruff"] = ruff_setup(lspconfig, capabilities),
 		}
+
 		require("fidget").setup({})
 		require("mason-lspconfig").setup({ handlers = handlers })
 
-		cmp.setup({
-			snippet = {
-				expand = function(args)
-					require("luasnip").lsp_expand(args.body)
-				end,
-			},
-			mapping = cmp.mapping.preset.insert({
-				["<C-Space"] = cmp.mapping.complete(),
-				["<CR>"] = cmp.mapping.confirm({ select = true }),
-				["<C-CR>"] = function(fallback)
-					cmp.abort()
-					fallback()
-				end,
-				["<tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.select_next_item()
-					elseif vim.snippet.active({ direction = 1 }) then
-						vim.schedule(function()
-							vim.snippet.jump(1)
-						end)
-					else
-						fallback()
-					end
-				end, { "i", "s" }),
-				["<S-tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.select_prev_item()
-					elseif vim.snippet.active({ direction = -1 }) then
-						vim.schedule(function()
-							vim.snippet.jump(-1)
-						end)
-					else
-						fallback()
-					end
-				end, { "i", "s" }),
-			}),
-			sources = cmp.config.sources({ { name = "nvim_lsp" }, { name = "luasnip" } }, { { name = "buffer" } }),
-		})
-
 		vim.diagnostic.config({
-			-- update_in_insert = trVue,
+
 			float = {
 				focusable = false,
 				style = "minimal",
 				border = "rounded",
-				source = "always",
+				source = "if_many",
 				header = "",
 				prefix = "",
 			},
