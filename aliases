@@ -4,14 +4,15 @@
 [ -s /usr/share/nvm/init-nvm.sh ] && \. /usr/share/nvm/init-nvm.sh
 [ -s s~/.local/bin:$PATH ] && export PATH=~/.local/bin:$PATH
 
-command -v pacman 2>&1 >/dev/null  && spac() { sudo pacman -Syu --noconfirm "$@"; }
-command -v yay 2>&1 >/dev/null  && syay() { yay -Syu --noconfirm "$@"; }
+[ -n "$(command -v pacman)" ] && spac() { sudo pacman -Syu --noconfirm "$@"; }
+[ -n "$(command -v yay)" ]  && syay() { yay -Syu --noconfirm "$@"; }
 
-[ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"
-[ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm"
+if [ -n "$(command -v brew )" ]; then
+  [ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"
+  [ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm"
+fi
 
-command -v delta 2>&1 >/dev/null  && d() { delta -s --dark --hyperlinks "$@" }
-command -v thefuck 2>&1 >/dev/null  && eval $(thefuck --alias)
+[ -n "$(command -v thefuck)" ] && eval $(thefuck --alias)
 
 export PATH="$(yarn global bin):$PATH"
 export PATH=~/.local/bin:$PATH
@@ -26,3 +27,5 @@ alias sv='sudo nvim'
 alias u="uv run"
 alias upgrade="uv lock --upgrade"
 alias pre-commit="uv run pre-commit install;uv run pre-commit install --hook-type pre-push"
+[ -n "$(command -v delta)" ] && d() { delta -s --dark --hyperlinks "$@"; }
+
