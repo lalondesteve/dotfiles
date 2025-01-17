@@ -1,0 +1,16 @@
+# include .config/alias in *shrc 
+# [ -f $HOME/.config/aliases ] && . $HOME/.config/aliases
+spac() { sudo pacman -Syu --noconfirm "$@"; }
+syay() { yay -Syu --noconfirm "$@"; }
+source /usr/share/nvm/init-nvm.sh
+export PATH="$(yarn global bin):$PATH"
+export PATH=~/.local/bin:$PATH
+eval "$(starship init bash)"
+
+alias ve='source .venv/bin/activate'
+alias py='uv run python'
+alias clera='clear'
+alias uvim='uv run nvim'
+alias v='nvim'
+alias sv='sudo nvim'
+

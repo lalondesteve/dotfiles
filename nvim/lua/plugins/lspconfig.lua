@@ -44,15 +44,20 @@ return {
 					},
 				})
 			end,
-      -- using the variable so I can easily switch between pyright and basedpyright
+			-- using the variable so I can easily switch between pyright and basedpyright
 			["pyright"] = function(server_name)
 				require("lspconfig")[server_name].setup({ capabilities = capabilities }, {
-					python = {
-						disableOrganizeImports = true,
-						analysis = {
-							-- ignore = { '*' },
-							diagnosticsMode = "off",
-							typeCheckingMode = "standard",
+					settings = {
+						pyright = {
+							disableOrganizeImports = true,
+							disableTaggedHints = true,
+						},
+						python = {
+							analysis = {
+								-- ignore = { '*' },
+								diagnosticsMode = "off",
+								typeCheckingMode = "standard",
+							},
 						},
 					},
 				})

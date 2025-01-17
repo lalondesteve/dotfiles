@@ -15,4 +15,10 @@ foo.*
 *.log
 data
 
-*__pycach*
+*__pycache*
+*bak.*
+pocket-casts-linux/*
+Apple\ Music/*
+Raspberry*
+Trust*
+dconf/*
