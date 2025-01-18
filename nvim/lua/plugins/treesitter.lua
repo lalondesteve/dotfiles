@@ -13,9 +13,7 @@ local lang = {
 	"markdown",
 	"markdown_inline",
 	"ninja",
-	"printf",
 	"python",
-	"query",
 	"regex",
 	"rst",
 	"toml",
@@ -23,6 +21,7 @@ local lang = {
 	"typescript",
 	"vim",
 	"vimdoc",
+	"vue",
 	"xml",
 	"yaml",
 }
@@ -32,7 +31,11 @@ return {
 	build = ":TSUpdate",
 	cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
 	opts_extend = { "ensure_installed" },
-	opts = { highlight = { enabled = true }, indent = { enabled = true }, ensure_installed = lang },
+	opts = {
+		highlight = { enabled = true },
+		indent = { enabled = true },
+		ensure_installed = lang,
+	},
 	config = function(_, opts)
 		require("nvim-treesitter.configs").setup(opts)
 	end,

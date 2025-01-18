@@ -91,5 +91,19 @@ return {
 				prefix = "",
 			},
 		})
+		-- LSP
+		local map = vim.keymap.set
+		map("n", "K", vim.lsp.buf.hover, {})
+		map("n", "<leader>cd", vim.lsp.buf.definition, { desc = "Code Definition" })
+		map("n", "<leader>cr", vim.lsp.buf.references, { desc = "Code References" })
+		map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
+		map("n", "<leader>ca", vim.lsp.buf.format, { desc = "Code LSP Format" })
+		map("n", "<leader>ca", vim.lsp.buf.rename, { desc = "Code Rename" })
+		map(
+			"n",
+			"<leader>co",
+			'<cmd>lua vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" } }, apply = true })<cr>',
+			{ desc = "Organize Imports" }
+		)
 	end,
 }

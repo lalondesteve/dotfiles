@@ -1,5 +1,16 @@
 return {
 	"hrsh7th/nvim-cmp",
+	lazy = false,
+	dependencies = {
+		"hrsh7th/cmp-nvim-lsp",
+		"hrsh7th/cmp-buffer",
+		"hrsh7th/cmp-path",
+		"hrsh7th/cmp-cmdline",
+		"hrsh7th/nvim-cmp",
+		"L3MON4D3/LuaSnip",
+		"saadparwaiz1/cmp_luasnip",
+		"j-hui/fidget.nvim",
+	},
 	opts = function(_, opts)
 		local has_words_before = function()
 			unpack = unpack or table.unpack
@@ -7,21 +18,23 @@ return {
 			return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 		end
 		local cmp = require("cmp")
+		require("luasnip.loaders.from_vscode").lazy_load()
 		opts.snippet = {
 			expand = function(args)
 				require("luasnip").lsp_expand(args.body)
+				require("cmp_luasnip").lsp_expand(args.body)
 			end,
 		}
 
 		opts.sources = {
 			{ name = "nvim_lsp" },
 			{ name = "luasnip" },
-			{ name = "buffer" },
 		}
 
 		opts.mapping = {
 			["<C-Space"] = cmp.mapping.complete(),
 			["<CR>"] = cmp.mapping.confirm({ select = true }),
+			["<C-e>"] = cmp.mapping.abort(),
 			["<C-CR>"] = function(fallback)
 				cmp.abort()
 				fallback()

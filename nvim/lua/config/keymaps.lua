@@ -40,14 +40,3 @@ map("n", "<leader>wd", "<C-w>c", { desc = "Delete Window", remap = true })
 map("n", "<leader>ll", "<cmd>Lazy<cr>", { desc = "Lazy" })
 map("n", "<leader>lx", "<cmd>LazyExtras<cr>", { desc = "LazyExtras" })
 --
--- LSP
-map("n", "K", vim.lsp.buf.hover, {})
-map("n", "<leader>cd", vim.lsp.buf.definition, { desc = "Code Definition" })
-map("n", "<leader>cr", vim.lsp.buf.references, { desc = "Code References" })
-map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
-map(
-	"n",
-	"<leader>co",
-	'<cmd>lua vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" } }, apply = true })<cr>',
-	{ desc = "Organize Imports" }
-)

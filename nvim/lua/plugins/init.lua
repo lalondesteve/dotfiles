@@ -1,6 +1,6 @@
 return {
 	"nvim-lua/plenary.nvim",
-
+	"nvim-telescope/telescope-ui-select.nvim",
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	{
 		"nvim-telescope/telescope.nvim",
@@ -12,6 +12,9 @@ return {
 			{ "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Telescope buffers" } },
 			{ "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Telescope help tags" } },
 		},
+		config = function()
+			require("telescope").load_extension("ui-select")
+		end,
 	},
 	{
 		"akinsho/bufferline.nvim",
