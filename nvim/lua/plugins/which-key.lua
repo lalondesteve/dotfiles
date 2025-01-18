@@ -3,6 +3,7 @@ return {
 	event = "VeryLazy",
 	opts = {
 		preset = "helix",
+		defaults = {},
 		delay = 100,
 		icons = { mappings = false },
 		spec = {
@@ -29,6 +30,9 @@ return {
 					return require("which-key.extras").expand.win()
 				end,
 			},
+		},
+		triggers = {
+			{ "<leader>", mode = { "n", "v" } },
 		},
 	},
 }

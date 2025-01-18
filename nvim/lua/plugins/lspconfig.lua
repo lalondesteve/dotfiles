@@ -6,6 +6,10 @@ local function cssls_setup(config, capabilities)
 	})
 end
 
+local ruff = {
+	cmd_env = { RUFF_TRACE = "messages" },
+	init_options = { settings = { logLevel = "error" } },
+}
 -- local function ruff_setup(config, capabilities)
 -- 	config.ruff.setup(capabilities, {
 -- 		on_attach = function(client, _)
@@ -53,6 +57,7 @@ return {
 		"saadparwaiz1/cmp_luasnip",
 		"j-hui/fidget.nvim",
 	},
+	opts = { servers = { ruff = ruff } },
 	config = function()
 		local cmp_lsp = require("cmp_nvim_lsp")
 		local capabilities = vim.tbl_deep_extend(

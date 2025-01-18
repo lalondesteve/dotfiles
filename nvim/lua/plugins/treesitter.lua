@@ -12,10 +12,12 @@ local lang = {
 	"luap",
 	"markdown",
 	"markdown_inline",
+	"ninja",
 	"printf",
 	"python",
 	"query",
 	"regex",
+	"rst",
 	"toml",
 	"tsx",
 	"typescript",
@@ -28,22 +30,10 @@ local lang = {
 return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
-	config = function()
-		require("nvim-treesitter.configs").setup({
-			highlight = { enable = true },
-			indent = { enable = true },
-			ensure_installed = lang,
-			sync_install = false,
-			auto_install = true,
-			incremental_selection = {
-				enable = true,
-				keymaps = {
-					init_selection = "<C-space>",
-					node_incremental = "<C-space>",
-					scope_incremental = false,
-					node_decremental = "<bs>",
-				},
-			},
-		})
+	cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+	opts_extend = { "ensure_installed" },
+	opts = { highlight = { enabled = true }, indent = { enabled = true }, ensure_installed = lang },
+	config = function(_, opts)
+		require("nvim-treesitter.configs").setup(opts)
 	end,
 }

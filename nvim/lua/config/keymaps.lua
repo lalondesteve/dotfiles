@@ -6,8 +6,8 @@ map("n", "<leader>e", vim.cmd.Ex, { desc = "File Explorer" })
 map({ "n", "v", "x" }, "<C-j>", ":m'>+<cr>gv")
 map({ "n", "v", "x" }, "<C-k>", ":m-2<cr>gv")
 -- move and zoom
-map("n", "<C-d>", "<C-d>zz", { desc = "Page Down"})
-map("n", "<C-u>", "<C-u>zz", { desc = "Page Up"})
+map("n", "<C-d>", "<C-d>zz", { desc = "Page Down" })
+map("n", "<C-u>", "<C-u>zz", { desc = "Page Up" })
 
 -- intend with tab
 map("n", "<tab>", ">>")
@@ -18,10 +18,12 @@ map("v", "<S-tab>", "<gv")
 -- buffers : LazyVim
 map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
+map("n", "<leader>bp", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
+map("n", "<leader>bn", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 map("n", "<leader>bd", "<cmd>bd<cr>", { desc = "Delete Buffer" })
 -- map("n", "<leader>bd", function()
-        -- Snacks.bufdelete()
+-- Snacks.bufdelete()
 -- end, { desc = "Delete Buffer" })
 -- map("n", "<leader>bo", function()
 --         Snacks.bufdelete.other()
@@ -43,4 +45,9 @@ map("n", "K", vim.lsp.buf.hover, {})
 map("n", "<leader>cd", vim.lsp.buf.definition, { desc = "Code Definition" })
 map("n", "<leader>cr", vim.lsp.buf.references, { desc = "Code References" })
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
-map("n", "<leader>co", '<cmd>lua vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" } }, apply = true })<cr>', { desc = "Organize Imports" })
+map(
+	"n",
+	"<leader>co",
+	'<cmd>lua vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" } }, apply = true })<cr>',
+	{ desc = "Organize Imports" }
+)
