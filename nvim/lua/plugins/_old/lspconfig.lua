@@ -1,3 +1,7 @@
+if true then
+	return {}
+end
+
 local function cssls_setup(config, capabilities)
 	config.cssls.setup({ capabilities = capabilities }, {
 		settings = {

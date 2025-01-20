@@ -1,3 +1,6 @@
+if true then
+	return {}
+end
 local lang = {
 	"bash",
 	"c",
@@ -32,7 +35,7 @@ return {
 	build = ":TSUpdate",
 	cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
 	opts_extend = { "ensure_installed" },
-	opts = { highlight = { enabled = true }, indent = { enabled = true }, ensure_installed = lang },
+	opts = { highlight = { enabled = true }, indent = { enabled = true }, ensure_installed = lang, auto_install = true },
 	config = function(_, opts)
 		require("nvim-treesitter.configs").setup(opts)
 	end,

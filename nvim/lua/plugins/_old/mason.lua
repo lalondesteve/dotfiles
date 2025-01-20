@@ -1,3 +1,6 @@
+if true then
+	return {}
+end
 local ensure_installed = {
 	"css-lsp",
 	"docker-compose-language-service",

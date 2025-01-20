@@ -1,3 +1,6 @@
+if true then
+	return {}
+end
 return {
 	"stevearc/conform.nvim",
 	dependecies = { "mason.nvim" },
