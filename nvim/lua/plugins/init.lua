@@ -23,6 +23,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     branch = "main",
+    opts = {},
     lazy = false,
   },
   {

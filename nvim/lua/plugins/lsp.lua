@@ -1,4 +1,5 @@
 local servers = {
+  -- list of servers for Mason to auto-install
   "css-lsp",
   "docker-compose-language-service",
   "dockerfile-language-server",
@@ -31,9 +32,9 @@ return {
   {
     "williamboman/mason.nvim",
     cmd = "Mason",
+    lazy = false,
     build = ":MasonUpdate",
     opts_extend = { "ensure_installed" },
-    lazy = false,
     opts = {
       ensure_installed = servers,
     },
@@ -50,14 +51,7 @@ return {
       end)
     end,
   },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    lazy = false,
-    opts = {
-      auto_install = true,
-    },
-    config = function() end,
-  },
+  { "williamboman/mason-lspconfig.nvim", config = function() end },
   {
     "neovim/nvim-lspconfig",
     lazy = false,
@@ -101,7 +95,11 @@ return {
           },
         }),
       }
-      require("mason-lspconfig").setup({ handlers = handlers })
+      require("mason-lspconfig").setup({
+        automatic_installation = true,
+        ensure_installed = {},
+        handlers = handlers
+      })
       vim.diagnostic.config({
 
         float = {
