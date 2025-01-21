@@ -1,5 +1,14 @@
 return {
   "nvim-lua/plenary.nvim",
+  -- {
+  --   "stevearc/conform.nvim",
+  --   dependencies = { "mason.nvim" },
+  --   lazy = true,
+  --   cmd = "ConformInfo",
+  --   opts = {
+  --     default_format_opts = { async = false, quiet = false, lsp_format = "fallback" }
+  --   }
+  -- },
   {
     "j-hui/fidget.nvim",
     opts = { notification = { override_vim_notify = true } },
@@ -15,16 +24,19 @@ return {
         desc = "Dismiss All Notifications",
       },
     },
-    config = function(_, opts)
-      require("fidget").setup(opts)
-    end
   },
   {
     "nvim-treesitter/nvim-treesitter",
+    -- enabled = false,
+    main = "nvim-treesitter.configs",
     build = ":TSUpdate",
-    branch = "main",
-    lazy = false,
-    opts = { auto_install = true, highlight = { enable = true } }
+    branch = "master",
+    opts = {
+      auto_install = true,
+      indent = { enable = true },
+      highlight = { enable = true },
+      ensure_installed = "all",
+    },
   },
   {
     "folke/snacks.nvim",

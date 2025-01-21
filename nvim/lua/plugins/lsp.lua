@@ -16,7 +16,7 @@ local servers = {
   "prettier",
   "pyright",
   -- "basedpyright",
-  "ruff",
+  -- "ruff",
   -- "rust-analyzer",
   "shfmt",
   "stylua",
@@ -37,11 +37,10 @@ return {
     opts = {
       ensure_installed = servers,
     },
-    config = function(_, opts)
-      require("mason").setup()
+    init = function()
       local mr = require("mason-registry")
       mr.refresh(function()
-        for _, tool in ipairs(opts.ensure_installed) do
+        for _, tool in pairs(servers) do
           local p = mr.get_package(tool)
           if not p:is_installed() then
             p:install()
@@ -56,7 +55,7 @@ return {
     opts = {
       auto_install = true,
     },
-    config = function() end,
+    config = true,
   },
   {
     "neovim/nvim-lspconfig",
@@ -65,14 +64,16 @@ return {
       "williamboman/mason.nvim",
       "j-hui/fidget.nvim",
       "williamboman/mason.nvim",
+      "saghen/blink.cmp"
     },
     config = function()
-      local cmp_nvim_lsp = require("cmp_nvim_lsp")
       local capabilities = vim.tbl_deep_extend(
         "force",
         {},
-        vim.lsp.protocol.make_client_capabilities(),
-        cmp_nvim_lsp.default_capabilities()
+        -- vim.lsp.protocol.make_client_capabilities(),
+        {},
+        require("blink.cmp").get_lsp_capabilities()
+      -- require("cmp_nvim_lsp").default_capabilities()
       )
       local lspconfig = require("lspconfig")
       local handlers = {
@@ -84,22 +85,25 @@ return {
             css = { validate = true, lint = { unknownAtRules = "ignore" } },
           },
         }),
-        ["pyright"] = lspconfig.pyright.setup(capabilities, {
-          settings = {
-            pyright = {
-              disableOrganizeImports = true,
-              disableTaggedHints = true,
-            },
-            python = {
-              analysis = {
-                autoImportCompletion = true,
-                autoSearchPaths = true,
-                diagnosticMode = "off",
-                typeCheckingMode = "standard",
-              },
-            },
-          },
-        }),
+        -- ["ruff"] = lspconfig.ruff.setup({ capabilities = capabilities, cmd_env = { RUFF_TRACE = "messages" }, init_options = { settings = { logLevel = "error" } } }),
+
+        -- ["pyright"] = lspconfig.pyright.setup(capabilities, {
+        --   settings = {
+        --     pyright = {
+        --       -- disableOrganizeImports = true,
+        --       -- disableTaggedHints = true,
+        --     },
+        --     python = {
+        --       analysis = {
+        --         autoImportCompletion = true,
+        --         autoSearchPaths = true,
+        --         diagnosticMode = "workspace",
+        --         useLibraryCodeForTypes = true,
+        --         typeCheckingMode = "standard",
+        --       },
+        --     },
+        --   },
+        -- }),
       }
       require("mason-lspconfig").setup({ handlers = handlers })
       vim.diagnostic.config({

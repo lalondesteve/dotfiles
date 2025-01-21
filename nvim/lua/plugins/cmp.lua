@@ -1,11 +1,16 @@
+if true then
+  return {}
+end
 return {
   "hrsh7th/nvim-cmp",
   lazy = false,
   priority = 100,
   dependencies = {
+    "neovim/nvim-lspconfig",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-cmdline",
     { "L3MON4D3/LuaSnip", build = "make install_jsregexp" },
     "saadparwaiz1/cmp_luasnip",
   },
@@ -21,7 +26,7 @@ return {
     opts.snippet = {
       expand = function(args)
         require("luasnip").lsp_expand(args.body)
-        require("cmp_luasnip").lsp_expand(args.body)
+        -- require("cmp_luasnip").lsp_expand(args.body)
       end,
     }
 
@@ -29,6 +34,7 @@ return {
       { name = "lazydev" },
       { name = "nvim_lsp" },
       { name = "luasnip" },
+      { name = "path" },
     }, { { name = "buffer" } })
 
     opts.mapping = {
