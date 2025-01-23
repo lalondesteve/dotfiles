@@ -33,5 +33,5 @@ return {
       indent = { enable = true },
     },
   },
-  -- { "mfussenegger/nvim-lint", event = { "BufReadPost", "BufWritePost", "BufNewFile" } },
+  { "mfussenegger/nvim-lint", event = { "BufReadPost", "BufWritePost", "BufNewFile" } },
 }
