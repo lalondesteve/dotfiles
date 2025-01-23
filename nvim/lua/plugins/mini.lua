@@ -1,7 +1,7 @@
 return {
   -- "echasnovski/mini.nvim",
-  "echasnovski/mini.surround",
-  "echasnovski/mini.ai",
+  { "echasnovski/mini.surround", version = false, config = true },
+  { "echasnovski/mini.ai",       version = false, config = true },
   {
     "echasnovski/mini.pairs",
     event = "VeryLazy",
