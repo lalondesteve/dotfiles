@@ -27,5 +27,7 @@ alias sv='sudo nvim'
 alias u="uv run"
 alias upgrade="uv lock --upgrade"
 alias pre-commit="uv run pre-commit install;uv run pre-commit install --hook-type pre-push"
+alias hyprconf="~/.config/hypr/hyprland.conf.d/"
+alias src="source $(echo '~/.*shrc')"
 [ -n "$(command -v delta)" ] && d() { delta -s --dark --hyperlinks "$@"; }
 
