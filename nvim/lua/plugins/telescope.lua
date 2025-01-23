@@ -4,14 +4,29 @@ return {
   cmd = "Telescope",
   dependencies = {
     'nvim-lua/plenary.nvim',
-    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-    'nvim-telescope/telescope-ui-select.nvim',
+    {
+      'nvim-telescope/telescope-fzf-native.nvim',
+      build = 'make',
+      config = function()
+        require('telescope').load_extension('fzf')
+      end
+    },
+    {
+      'nvim-telescope/telescope-ui-select.nvim',
+      config = function()
+        require('telescope').load_extension('ui-select')
+      end
+    },
+    'nvim-treesitter/nvim-treesitter',
   },
-  config = function()
-    local t = require('telescope')
-    t.load_extension("fzf")
-    t.load_extension("ui-select")
-  end,
+  version = false,
+  opts = {
+    defaults = { wrap_results = true, },
+    pickers = {
+      diagnostics = { line_width = 'full', },
+    }
+
+  },
   keys = {
     { "<leader>sf", "<cmd>Telescope find_files<cr>",                { desc = "Telescope Search Files" } },
     { "<leader>sb", "<cmd>Telescope buffers<cr>",                   { desc = "Telescope Search Buffers" } },
