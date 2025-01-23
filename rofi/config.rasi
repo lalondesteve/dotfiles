@@ -1,5 +1,5 @@
 * {
-    font: "Hack Nerd 16";
+    font: "Monaspace Neon ligth 12";
     g-spacing: 18px;
     g-margin: 0;
     b-color: #000000FF;
@@ -18,7 +18,7 @@
 
 window {
     transparency: "real";
-    width: 450px;
+    width: 30%;
     border-radius: @b-radius;
     background-color: @wbg-color;
     border: @w-border;
@@ -27,18 +27,16 @@ window {
 }
 
 listview {
-    columns: 1;
-    lines: 7;
-    fixed-height: true;
-    fixed-columns: true;
+    columns: 3;
+    lines: 12;
     cycle: false;
-    scrollbar: false;
+    fixed-height: true;
+    fixed-width: true;
     border: 0px;
 }
 
 prompt {
     text-color: @fg-color;
-    margin-right: 12px;
 }
 
 inputbar {
@@ -48,8 +46,8 @@ inputbar {
     border-color: @w-border-color;
     border-radius: @b-radius;
     padding: 8px;
+    margin: 0% 8% ;
     background-color: @alt-color;
-
 }
 
 entry {
@@ -71,8 +69,19 @@ element {
     margin: @g-margin;
     padding: @g-padding;
     background-color: transparent;
-    text-color: @fg-color;
 }
+
+element-text {
+    highlight: inherit;
+    text-color: @fg-color;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+  }
+
+element-icon {
+    size: 48px;
+    background-color: transparent;
+  }
 
 element normal.normal {
 	background-color: transparent;
