@@ -1,6 +1,6 @@
 return {
   'saghen/blink.cmp',
-  dependencies = 'rafamadriz/friendly-snippets',
+  dependencies = { 'rafamadriz/friendly-snippets', 'L3MON4D3/LuaSnip' },
   version = '*',
   -- build = 'cargo build --release',
   ---@module 'blink.cmp'
@@ -11,8 +11,16 @@ return {
       ["<tab>"] = { 'select_next', 'fallback' },
       ["<S-tab>"] = { 'select_prev', 'fallback' },
       ["<cr>"] = { 'select_and_accept', 'fallback' },
+      ["<esc>"] = { 'cancel', 'fallback' },
     },
+    -- This feature is experimental,
+    signature = { enabled = true },
+    completion = {
+      ghost_text = { enabled = true },
+      documentation = { auto_show = true, auto_show_delay_ms = 500, window = { border = 'single' } },
+      menu = { border = 'single' },
 
+    },
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev' },
       cmdline = {},
