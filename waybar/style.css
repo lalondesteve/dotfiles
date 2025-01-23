@@ -1,37 +1,53 @@
+@define-color cyan #009fff;
+@define-color bg rgba(41, 43, 46, 0.85);
+@define-color alt-bg #1a1a1a;
+@define-color white #ebf7ff;
+
 * {
-	font-size: 20px;
-	font-family: "JetBrainsMono Nerd Font";
-	border-left: 1;
-	border-right: 1;
-	color: #00afff;
+  font-size: 20px;
+  font-family: "Monaspace Neon Regular";
+  /*"JetBrainsMono Nerd Font";*/
+  border-left: 4px;
+  border-right: 4px;
+  padding: 1px 4px;
+  color: @cyan;
+  transition: 0.5s;
 }
 
-* :hover{
-  color: #fff;
+* :hover {
+  color: @white;
 }
 
+* button {
+  padding-left: 0;
+  margin-left: 0px;
+}
 
 * button:hover {
-	color: #000;
-	background: #00afff;
+  color: @alt-bg;
+  background: @cyan;
 
 }
 
 
-  window#waybar {
-	background: rgba(41,43,46,0.85);
-	margin: 0 2px;
-	padding: 2px;
+window#waybar {
+  background: @bg;
+  margin: 0 2px;
+  padding: 4px;
 }
 
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
-	color: #1a1a1a;
+  color: @alt-bg;
+  padding: 0px;
 }
+
 #custom-right-arrow-light,
 #custom-left-arrow-light {
-	color: #292b2e;
-	background: #1a1a1a;
+  color: @cyan;
+  opacity: 0.75;
+  background: @alt-bg;
+  padding: 0px;
 }
 
 #workspaces,
@@ -44,18 +60,17 @@
 #custom-updates,
 #disk,
 #tray {
-	background: #1a1a1a;
+  background: @alt-bg;
 }
 
 #workspaces button {
-	padding: 0 2px;
+  padding: 0 2px;
 }
+
 #workspaces button.focused {
-	color: #268bd2;
+  color: @cyan;
+  border: solid 1px @cyan;
 }
-
-
-
 
 #clock,
 #pulseaudio,
@@ -63,5 +78,5 @@
 #cpu,
 #custom-updates,
 #disk {
-	padding: 0 10px;
+  padding: 0 10px;
 }
