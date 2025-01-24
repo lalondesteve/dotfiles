@@ -1,5 +1,5 @@
 @define-color cyan #009fff;
-@define-color bg rgba(41, 43, 46, 0.85);
+@define-color bg #1a1b25;
 @define-color alt-bg #1a1a1a;
 @define-color white #ebf7ff;
 
@@ -33,6 +33,7 @@
 
 window#waybar {
   background: @bg;
+  opacity: 0.85;
   margin: 0 2px;
   padding: 4px;
 }
@@ -68,7 +69,7 @@ window#waybar {
   padding: 0 2px;
 }
 
-#workspaces button.focused {
+#workspaces button.active {
   color: @cyan;
   border: solid 1px @cyan;
 }
