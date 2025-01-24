@@ -18,6 +18,8 @@ export PATH="$(yarn global bin):$PATH"
 export PATH=~/.local/bin:$PATH
 eval "$(starship init $SHELL)"
 
+alias ....='cd ../..'
+alias ..='cd ..'
 alias ve='source .venv/bin/activate'
 alias py='uv run python'
 alias clera='clear'
@@ -27,7 +29,6 @@ alias sv='sudo nvim'
 alias u="uv run"
 alias upgrade="uv lock --upgrade"
 alias pre-commit="uv run pre-commit install;uv run pre-commit install --hook-type pre-push"
-alias hyprconf="~/.config/hypr/hyprland.conf.d/"
 alias src="source $(echo '~/.*shrc')"
 [ -n "$(command -v delta)" ] && d() { delta -s --dark --hyperlinks "$@"; }
 
