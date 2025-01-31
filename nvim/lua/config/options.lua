@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.g.maplocalleader = "è"
+vim.g.maplocalleader = "é"
 
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
@@ -14,6 +14,7 @@ vim.o.confirm = true
 vim.o.cursorline = false
 vim.o.expandtab = true
 vim.o.grepprg = "rg --vimgrep"
+vim.o.hlsearch = false
 vim.o.completeopt = "menu,menuone,noselect"
 vim.o.number = true
 vim.o.relativenumber = true

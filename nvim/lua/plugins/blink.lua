@@ -11,7 +11,6 @@ return {
       ["<tab>"] = { 'select_next', 'fallback' },
       ["<S-tab>"] = { 'select_prev', 'fallback' },
       ["<cr>"] = { 'select_and_accept', 'fallback' },
-      ["<esc>"] = { 'cancel', 'fallback' },
     },
     -- This feature is experimental,
     signature = { enabled = true },
