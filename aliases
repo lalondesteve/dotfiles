@@ -14,6 +14,9 @@ fi
 
 [ -n "$(command -v thefuck)" ] && eval $(thefuck --alias)
 
+# send add __pycache__ folders to /tmp
+export PYTHONPYCACHEPREFIX=/tmp
+
 export PATH="$(yarn global bin):$PATH"
 export PATH=~/.local/bin:$PATH
 eval "$(starship init $SHELL)"
