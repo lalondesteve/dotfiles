@@ -1,0 +1,43 @@
+{
+  "description": "Hyper Launch Apps",
+  "manipulators": [
+    {
+      "from": {
+        "key_code": "return_or_enter",
+        "modifiers": {
+          "mandatory": [
+            "command",
+            "right_shift",
+            "right_option",
+            "right_control"
+          ]
+        }
+      },
+      "to": [
+        {
+          "shell_command": "open -n '/Applications/Ghostty.app'"
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "from": {
+        "key_code": "b",
+        "modifiers": {
+          "mandatory": [
+            "command",
+            "right_shift",
+            "right_option",
+            "right_control"
+          ]
+        }
+      },
+      "to": [
+        {
+          "shell_command": "open '/Applications/Zen Browser.app'"
+        }
+      ],
+      "type": "basic"
+    }
+  ]
+}

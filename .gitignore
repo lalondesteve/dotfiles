@@ -5,6 +5,7 @@ wireshark/*
 *.log
 github-copilot/*
 OpenRGB/*.log
+*-lock.*
 
 tt.*
 .tests

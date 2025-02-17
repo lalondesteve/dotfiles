@@ -1,0 +1,24 @@
+{
+  "description": "Hold Tab = ctrl",
+  "manipulators": [
+    {
+      "from": {
+        "key_code": "tab",
+        "modifiers": {
+          "optional": []
+        }
+      },
+      "to": [
+        {
+          "key_code": "left_control"
+        }
+      ],
+      "to_if_alone": [
+        {
+          "key_code": "tab"
+        }
+      ],
+      "type": "basic"
+    }
+  ]
+}

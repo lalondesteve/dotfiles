@@ -1,0 +1,14 @@
+{
+    "description": "Right click to A",
+    "manipulators": [
+        {
+            "type": "basic",
+            "from": {
+                "pointing_button": "button2"
+            },
+            "to": {
+                "key_code": "a"
+            }
+        }
+    ]
+}

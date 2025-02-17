@@ -4,60 +4,20 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Left Shift + Space to Underscore",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "spacebar",
-                                    "modifiers": {
-                                        "mandatory": ["shift"],
-                                        "optional": ["caps_lock"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "hyphen",
-                                        "modifiers": ["right_shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Caps to Escape - Hold Caps to Hyper",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_shift",
-                                        "modifiers": ["right_control", "right_option", "command"]
-                                    }
-                                ],
-                                "to_if_alone": [{ "key_code": "escape" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Hyper Launch Apps",
+                        "description": "Launch Apps",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "return_or_enter",
-                                    "modifiers": { "mandatory": ["command", "right_shift", "right_option", "right_control"] }
+                                    "modifiers": { "mandatory": ["command"] }
                                 },
-                                "to": [{ "shell_command": "open -n '/Applications/Ghostty.app'" }],
+                                "to": [{ "shell_command": "open '/Applications/Ghostty.app'" }],
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "b",
-                                    "modifiers": { "mandatory": ["command", "right_shift", "right_option", "right_control"] }
+                                    "modifiers": { "mandatory": ["fn"] }
                                 },
                                 "to": [{ "shell_command": "open '/Applications/Zen Browser.app'" }],
                                 "type": "basic"
@@ -72,8 +32,12 @@
                                     "key_code": "tab",
                                     "modifiers": { "optional": [] }
                                 },
-                                "to": [{ "key_code": "left_control" }],
+                                "parameters": {
+                                    "basic.to_if_alone_timeout_milliseconds": 120,
+                                    "basic.to_if_held_down_threshold_milliseconds": 120
+                                },
                                 "to_if_alone": [{ "key_code": "tab" }],
+                                "to_if_held_down": [{ "key_code": "left_control" }],
                                 "type": "basic"
                             }
                         ]
@@ -174,27 +138,7 @@
                         ]
                     },
                     {
-                        "description": "Fn + space = emoji menu. (Simplifies default command + control + space)",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "spacebar",
-                                    "modifiers": { "mandatory": ["fn"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "spacebar",
-                                        "modifiers": ["left_command", "left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Swap Caps and Escape when using Kitty and Ghostty",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -255,6 +199,45 @@
                                     }
                                 },
                                 "to": [{ "key_code": "spacebar" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Fn + space = emoji menu. (Simplifies default command + control + space)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "spacebar",
+                                    "modifiers": { "mandatory": ["fn"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "spacebar",
+                                        "modifiers": ["left_command", "left_control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Left Shift + Space to Underscore",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "spacebar",
+                                    "modifiers": {
+                                        "mandatory": ["shift"],
+                                        "optional": ["caps_lock"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "hyphen",
+                                        "modifiers": ["right_shift"]
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]

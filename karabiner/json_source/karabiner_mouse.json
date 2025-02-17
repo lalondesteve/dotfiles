@@ -1,0 +1,164 @@
+{
+  "description": "US Layout + Swap Caps and Escape when using Kitty and Ghostty",
+  "manipulators": [
+    {
+      "conditions": [
+        {
+          "bundle_identifiers": [
+            "kitty",
+            "ghostty"
+          ],
+          "type": "frontmost_application_if"
+        }
+      ],
+      "from": {
+        "key_code": "caps_lock",
+        "modifiers": {
+          "optional": [
+            "caps_lock"
+          ]
+        }
+      },
+      "to": [
+        {
+          "key_code": "escape"
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "conditions": [
+        {
+          "bundle_identifiers": [
+            "kitty",
+            "ghostty"
+          ],
+          "type": "frontmost_application_if"
+        }
+      ],
+      "from": {
+        "key_code": "escape",
+        "modifiers": {
+          "optional": [
+            "caps_lock"
+          ]
+        }
+      },
+      "to": [
+        {
+          "key_code": "caps_lock"
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "conditions": [
+        {
+          "bundle_identifiers": [
+            "kitty",
+            "ghostty"
+          ],
+          "type": "frontmost_application_if"
+        },
+        {
+          "input_sources": [
+            {
+              "input_source_id": "com.apple.keylayout.US"
+            }
+          ],
+          "type": "input_source_unless"
+        }
+      ],
+      "from": {
+        "any": "key_code"
+      },
+      "to": [
+        {
+          "select_input_source": {
+            "input_source_id": "com.apple.keylayout.US"
+          }
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "conditions": [
+        {
+          "bundle_identifiers": [
+            "kitty",
+            "ghostty"
+          ],
+          "type": "frontmost_application_unless"
+        },
+        {
+          "input_sources": [
+            {
+              "input_source_id": "com.apple.keylayout.US"
+            }
+          ],
+          "type": "input_source_if"
+        }
+      ],
+      "from": {
+        "any": "key_code"
+      },
+      "to": [
+        {
+          "select_input_source": [
+            {
+              "input_source_id": "com.apple.keylayout.Canadian-CSA"
+            }
+          ]
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "type": "basic",
+      "from": {
+        "pointing_button": "button1"
+      },
+      "to": [
+        {
+          "modifiers": {
+            "button1"
+          },
+          "select_input_source": [
+            {
+              "input_source_id": "com.apple.keylayout.Canadian-CSA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "pointing_button": "button1"
+      },
+      "to": [
+        {
+          "modifiers": {
+            "button1"
+          },
+          "select_input_source": [
+            {
+              "input_source_id": "com.apple.keylayout.US"
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "input_sources": [
+            {
+              "input_source_id": "com.apple.keylayout.Canadian-CSA",
+              "type": "input_source_if"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+gg

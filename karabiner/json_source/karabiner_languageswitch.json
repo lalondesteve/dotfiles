@@ -1,0 +1,69 @@
+{
+  "description": "US Layout in Kitty and Ghostty",
+  "manipulators": [
+    {
+      "conditions": [
+        {
+          "bundle_identifiers": [
+            "kitty",
+            "ghostty"
+          ],
+          "type": "frontmost_application_if"
+        },
+        {
+          "input_sources": [
+            {
+              "input_source_id": "com.apple.keylayout.US"
+            }
+          ],
+          "type": "input_source_unless"
+        }
+      ],
+      "from": {
+        "any": "key_code"
+      },
+      "to": [
+        {
+          "select_input_source": {
+            "input_source_id": "com.apple.keylayout.US",
+            "language": "en"
+          }
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "conditions": [
+        {
+          "bundle_identifiers": [
+            "kitty",
+            "ghostty"
+          ],
+          "type": "frontmost_application_unless"
+        },
+        {
+          "input_sources": [
+            {
+              "input_source_id": "com.apple.keylayout.US"
+            }
+          ],
+          "type": "input_source_if"
+        }
+      ],
+      "from": {
+        "any": "key_code"
+      },
+      "to": [
+        {
+          "select_input_source": [
+            {
+              "input_source_id": "com.apple.keylayout.Canadian-CSA",
+              "language": "fr"
+            }
+          ]
+        }
+      ],
+      "type": "basic"
+    }
+  ]
+}

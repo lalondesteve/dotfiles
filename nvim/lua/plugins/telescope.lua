@@ -36,5 +36,6 @@ return {
     { "<leader>sd", "<cmd>Telescope diagnostics<cr>",               { desc = "Telescope Search Diagnostics" } },
     { "<leader>/",  "<cmd>Telescope current_buffer_fuzzy_find<cr>", { desc = "Telescope Buffer Search" } },
     { "<leader>s%", "<cmd>Telescope current_buffer_fuzzy_find<cr>", { desc = "Telescope Buffer Search" } },
+    { "<leader>su", "<cmd>Telescope lsp_references<cr>",            { desc = "Telescope Search Usages" } },
   }
 }
