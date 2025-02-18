@@ -1,0 +1,31 @@
+{
+  "description": "Hold à to Hyper",
+  "manipulators": [
+    {
+      "from": {
+        "key_code": "backslash",
+        "modifiers": {
+          "optional": [
+            "any"
+          ]
+        }
+      },
+      "to": [
+        {
+          "key_code": "right_shift",
+          "modifiers": [
+            "right_control",
+            "right_option",
+            "command"
+          ]
+        }
+      ],
+      "to_if_alone": [
+        {
+          "key_code": "backslash"
+        }
+      ],
+      "type": "basic"
+    }
+  ]
+}

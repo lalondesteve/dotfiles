@@ -4,6 +4,25 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Hold à to Hyper",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "backslash",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_shift",
+                                        "modifiers": ["right_control", "right_option", "command"]
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "backslash" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Left Shift + Space to Underscore",
                         "manipulators": [
                             {
@@ -45,6 +64,7 @@
                     },
                     {
                         "description": "Hyper Launch Apps",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
