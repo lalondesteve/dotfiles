@@ -22,7 +22,6 @@ return {
     },
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev' },
-      cmdline = {},
       providers = {
         lazydev = {
           name = "LazyDev",
