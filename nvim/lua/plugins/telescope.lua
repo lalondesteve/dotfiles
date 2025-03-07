@@ -28,14 +28,18 @@ return {
 
   },
   keys = {
-    { "<leader>sf", "<cmd>Telescope find_files<cr>",                { desc = "Telescope Search Files" } },
-    { "<leader>sg", "<cmd>Telescope live_grep<cr>",                 { desc = "Telescope Search Files" } },
-    { "<leader>sb", "<cmd>Telescope buffers<cr>",                   { desc = "Telescope Search Buffers" } },
-    { "<leader>sh", "<cmd>Telescope help_tags<cr>",                 { desc = "Telescope Search Help" } },
-    { "<leader>sw", "<cmd>Telescope grep_string<cr>",               { desc = "Telescope Search Word" } },
-    { "<leader>sd", "<cmd>Telescope diagnostics<cr>",               { desc = "Telescope Search Diagnostics" } },
-    { "<leader>/",  "<cmd>Telescope current_buffer_fuzzy_find<cr>", { desc = "Telescope Buffer Search" } },
-    { "<leader>s%", "<cmd>Telescope current_buffer_fuzzy_find<cr>", { desc = "Telescope Buffer Search" } },
-    { "<leader>su", "<cmd>Telescope lsp_references<cr>",            { desc = "Telescope Search Usages" } },
+    { "<leader>sf", "<cmd>Telescope find_files<cr>",                { desc = "Search Files" } },
+    { "<leader>sg", "<cmd>Telescope live_grep<cr>",                 { desc = "Search Workspace" } },
+    { "<leader>sh", "<cmd>Telescope help_tags<cr>",                 { desc = "Search Help" } },
+    { "<leader>sw", "<cmd>Telescope grep_string<cr>",               { desc = "Search Word" } },
+    { "<leader>sd", "<cmd>Telescope diagnostics<cr>",               { desc = "Search Diagnostics" } },
+    { "<leader>/",  "<cmd>Telescope current_buffer_fuzzy_find<cr>", { desc = "Buffer Search" } },
+    { "<leader>sc", "<cmd>Telescope current_buffer_fuzzy_find<cr>", { desc = "Buffer Search" } },
+    { "<leader>su", "<cmd>Telescope lsp_references<cr>",            { desc = "Search Usages" } },
+    { "<leader>sq", "<cmd>Telescope quickfix<cr>",                  { desc = "Search Quickfix" } },
+    { "<leader>st", "<cmd>Telescope current_buffer_tags<cr>",       { desc = "Search Tags" } },
+    { "<leader>sv", "<cmd>Telescope lsp_definitions<cr>",           { desc = "Search Definitions" } },
+    { "<leader>si", "<cmd>Telescope lsp_implementations<cr>",       { desc = "Search Implementations" } },
+    { "<leader>sk", "<cmd>Telescope keymaps<cr>",                   { desc = "Search Keymaps" } },
   }
 }
