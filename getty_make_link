@@ -1,7 +1,6 @@
 #!/bin/bash
-$dir="/etc/systemd/system/getty.target.wants/getty@tty1.service.d" 
-if [ ! -d $dir]; then
-  sudo mkdir $dir
+dir="/etc/systemd/system/getty.target.wants/getty@tty1.service.d" 
+if [ ! -d $dir ]; then
+  sudo mkdir $dir;
 fi
-
-sudo ln -s $(pwd)/getty/username.conf $dir/username.conf
+[[ -d $dir ]] && sudo ln -s $(pwd)/getty/username.conf $dir/username.conf || echo error
