@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo ln -s $(pwd)/getty@tty1.service/getty@tty1.service.d/ /etc/systemd/system/getty.target.wants/getty@tty1.service.d
