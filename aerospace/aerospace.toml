@@ -41,7 +41,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
-automatically-unhide-macos-hidden-apps = false
+automatically-unhide-macos-hidden-apps = true
 
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -66,6 +66,9 @@ outer.right = 2
 
 [workspace-to-monitor-force-assignment]
 A = 'secondary'
+S = 'secondary'
+D = 'secondary'
+F = 'secondary'
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
@@ -101,7 +104,7 @@ A = 'secondary'
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 # bad interaction with CSA keyboard
 # TODO: find another keybinding
-# alt-slash = 'layout tiles horizontal vertical'
+alt-shift-ctrl-t = 'layout tiles horizontal vertical'
 # alt-comma = 'layout accordion horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
@@ -117,8 +120,8 @@ alt-shift-k = 'move up'
 alt-shift-l = 'move right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
-alt-shift-minus = 'resize smart -50'
-alt-shift-equal = 'resize smart +50'
+alt-shift-ctrl-minus = 'resize smart -50'
+alt-shift-ctrl-equal = 'resize smart +50'
 alt-shift-cmd-ctrl-minus = 'resize smart -200'
 alt-shift-cmd-ctrl-equal = 'resize smart +200'
 
@@ -133,22 +136,25 @@ alt-shift-cmd-ctrl-7 = 'workspace 7'
 alt-shift-cmd-ctrl-8 = 'workspace 8'
 alt-shift-cmd-ctrl-9 = 'workspace 9'
 alt-shift-cmd-ctrl-a = 'workspace A'
+alt-shift-cmd-ctrl-s = 'workspace S'
+alt-shift-cmd-ctrl-d = 'workspace D'
+alt-shift-cmd-ctrl-f = 'workspace F'
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-1 = 'move-node-to-workspace 1'
-alt-shift-2 = 'move-node-to-workspace 2'
-alt-shift-3 = 'move-node-to-workspace 3'
-alt-shift-4 = 'move-node-to-workspace 4'
-alt-shift-5 = 'move-node-to-workspace 5'
-alt-shift-6 = 'move-node-to-workspace 6'
-alt-shift-7 = 'move-node-to-workspace 7'
-alt-shift-8 = 'move-node-to-workspace 8'
-alt-shift-9 = 'move-node-to-workspace 9'
-alt-shift-a = 'move-node-to-workspace A'
-alt-shift-s = 'move-node-to-workspace S'
-alt-shift-d = 'move-node-to-workspace D'
-alt-shift-f = 'move-node-to-workspace F'
+alt-shift-ctrl-1 = 'move-node-to-workspace 1'
+alt-shift-ctrl-2 = 'move-node-to-workspace 2'
+alt-shift-ctrl-3 = 'move-node-to-workspace 3'
+alt-shift-ctrl-4 = 'move-node-to-workspace 4'
+alt-shift-ctrl-5 = 'move-node-to-workspace 5'
+alt-shift-ctrl-6 = 'move-node-to-workspace 6'
+alt-shift-ctrl-7 = 'move-node-to-workspace 7'
+alt-shift-ctrl-8 = 'move-node-to-workspace 8'
+alt-shift-ctrl-9 = 'move-node-to-workspace 9'
+alt-shift-ctrl-a = 'move-node-to-workspace A'
+alt-shift-ctrl-s = 'move-node-to-workspace S'
+alt-shift-ctrl-d = 'move-node-to-workspace D'
+alt-shift-ctrl-f = 'move-node-to-workspace F'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -158,10 +164,10 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
 
-alt-cmd-ctrl-shift-h = ['join-with left', 'mode main']
-alt-cmd-ctrl-shift-j = ['join-with down', 'mode main']
-alt-cmd-ctrl-shift-k = ['join-with up', 'mode main']
-alt-cmd-ctrl-shift-l = ['join-with right', 'mode main']
+alt-ctrl-shift-h = ['join-with left', 'mode main']
+alt-ctrl-shift-j = ['join-with down', 'mode main']
+alt-ctrl-shift-k = ['join-with up', 'mode main']
+alt-ctrl-shift-l = ['join-with right', 'mode main']
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
@@ -181,9 +187,9 @@ f = [
 # up = 'volume up'
 # shift-down = ['volume set 0', 'mode main']
 
-[[on-window-detected]]
-if.app-id = "com.mitchellh.ghostty"
-run = ["layout floating"]
+# [[on-window-detected]]
+# if.app-id = "com.mitchellh.ghostty"
+# run = ["layout floating"]
 [[on-window-detected]]
 if.window-title-regex-substring = "Karabiner"
 run = ["layout floating"]

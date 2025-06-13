@@ -7,10 +7,6 @@
 [ -n "$(command -v pacman)" ] && spac() { sudo pacman -Syu --noconfirm "$@"; }
 [ -n "$(command -v yay)" ]  && syay() { yay -Syu --noconfirm "$@"; }
 
-if [ -n "$(command -v brew )" ]; then
-  [ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"
-  [ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm"
-fi
 
 [ -n "$(command -v thefuck)" ] && eval $(thefuck --alias)
 
@@ -21,13 +17,15 @@ export PATH="$(yarn global bin):$PATH"
 export PATH=~/.local/bin:$PATH
 eval "$(starship init $SHELL)"
 
+alias lazy='NVIM_APPNAME=lazy nvim'
 alias ....='cd ../..'
 alias ..='cd ..'
 alias ve='source .venv/bin/activate'
 alias py='uv run python'
 alias clera='clear'
 alias uvim='uv run nvim'
-alias v='nvim'
+alias v='lazy'
+alias vim='lazy'
 alias sv='sudo nvim'
 alias u="uv run"
 alias upgrade="uv lock --upgrade"
@@ -35,3 +33,7 @@ alias pre-commit="uv run pre-commit install;uv run pre-commit install --hook-typ
 alias src="source $(echo '~/.*shrc')"
 [ -n "$(command -v delta)" ] && d() { delta -s --dark --hyperlinks "$@"; }
 
+if [ -n "$(command -v brew )" ]; then
+  [ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"
+  [ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm"
+fi

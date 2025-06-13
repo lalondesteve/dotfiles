@@ -1,0 +1,100 @@
+{
+  "description": "Corne copy paste undo cut",
+  "manipulators": [
+    {
+      "from": {
+        "key_code": "copy",
+        "modifiers": {
+          "optional": [
+            "any"
+          ]
+        }
+      },
+      "to": [
+        {
+          "key_code": "c",
+          "modifiers": [
+            "command"
+          ]
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "from": {
+        "key_code": "paste",
+        "modifiers": {
+          "optional": [
+            "any"
+          ]
+        }
+      },
+      "to": [
+        {
+          "key_code": "v",
+          "modifiers": [
+            "command"
+          ]
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "from": {
+        "key_code": "undo",
+        "modifiers": {
+          "optional": [
+            "any"
+          ]
+        }
+      },
+      "to": [
+        {
+          "key_code": "z",
+          "modifiers": [
+            "command"
+          ]
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "from": {
+        "key_code": "cut",
+        "modifiers": {
+          "optional": [
+            "any"
+          ]
+        }
+      },
+      "to": [
+        {
+          "key_code": "x",
+          "modifiers": [
+            "command"
+          ]
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "from": {
+        "key_code": "select",
+        "modifiers": {
+          "optional": [
+            "any"
+          ]
+        }
+      },
+      "to": [
+        {
+          "key_code": "a",
+          "modifiers": [
+            "command"
+          ]
+        }
+      ],
+      "type": "basic"
+    }
+  ]
+}

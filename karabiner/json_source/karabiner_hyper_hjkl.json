@@ -1,0 +1,85 @@
+{
+  "description": "hyper + hjkl",
+  "manipulators": [
+    {
+      "from": {
+        "key_code": "h",
+        "modifiers": {
+          "mandatory": [
+            "shift",
+            "option",
+            "control",
+            "command"
+          ]
+        }
+      },
+      "to": [
+        {
+          "key_code": "left_arrow",
+          "modifiers": []
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "from": {
+        "key_code": "j",
+        "modifiers": {
+          "mandatory": [
+            "shift",
+            "option",
+            "control",
+            "command"
+          ]
+        }
+      },
+      "to": [
+        {
+          "key_code": "down_arrow",
+          "modifiers": []
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "from": {
+        "key_code": "k",
+        "modifiers": {
+          "mandatory": [
+            "shift",
+            "option",
+            "control",
+            "command"
+          ]
+        }
+      },
+      "to": [
+        {
+          "key_code": "up_arrow",
+          "modifiers": []
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "from": {
+        "key_code": "l",
+        "modifiers": {
+          "mandatory": [
+            "shift",
+            "option",
+            "control",
+            "command"
+          ]
+        }
+      },
+      "to": [
+        {
+          "key_code": "right_arrow",
+          "modifiers": []
+        }
+      ],
+      "type": "basic"
+    }
+  ]
+}

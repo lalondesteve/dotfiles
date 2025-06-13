@@ -1,0 +1,38 @@
+{
+  "description": "make hyper key",
+  "manipulators": [
+    {
+      "type": "basic",
+      "from": {
+        "any": "key_code",
+        "modifiers": {
+          "mandatory": [
+            "command",
+            "alt",
+            "shift",
+            "control"
+          ],
+          "optional": [
+            "any"
+          ]
+        }
+      },
+      "to": [
+        {
+          "set_variable": {
+            "name": "hyper",
+            "value": 1
+          }
+        }
+      ],
+      "to_after_key_up": [
+        {
+          "set_variable": {
+            "name": "hyper",
+            "value": 0
+          }
+        }
+      ]
+    }
+  ]
+}
