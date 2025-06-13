@@ -21,3 +21,10 @@ map({ "n" }, "<C-j>", ":m +1<cr>", { desc = "Move Line Down" })
 map({ "n" }, "<c-k>", ":m -2<cr>", { desc = "Move Line UP" })
 map({ "x" }, "<C-j>", ":m +1<cr>gv", { desc = "Move Selection Down" })
 map({ "x" }, "<c-k>", ":m -2<cr>gv", { desc = "Move Selection UP" })
+
+-- Buffers ( : to leader)
+map({ "n", "v" }, "<leader>bn", vim.cmd.bnext, { desc = "Go to Next Buffer" })
+map({ "n", "v" }, "<leader>bp", vim.cmd.bprev, { desc = "Go to Previous Buffer" })
+map({ "n", "v" }, "<leader>bls", vim.cmd.buffers, { desc = "List All Buffers" })
+
+map({ "n", "v" }, "<leader>te", "<cmd>:term<cr>i", { desc = "Open Terminal" })
