@@ -1,29 +1,22 @@
+
+theme=tokyonight_night
 font-family=Monaspace Neon
 font-size=14
 window-padding-x=10
 window-padding-y=8,0
-theme=tokyonight_night
-# window-decoration=none
 
 gtk-titlebar=false
 gtk-tabs-location=bottom
 gtk-wide-tabs=false
-# window-decoration=false
+
 # JetbrainsMono Nerd Font    
 # Hack Nerd Font
 # RobotoMono Nerd Font
 # UbuntuMono Nerd Font
 
+macos-window-shadow = false
+
+mouse-hide-while-typing = true
 term = xterm-ghostty
 quit-after-last-window-closed = true
-
-
-keybind = super+shift+h=goto_split:left
-keybind = super+shift+j=goto_split:down
-keybind = super+shift+k=goto_split:up
-keybind = super+shift+l=goto_split:right
-keybind = super+alt+h=resize_split:left,50
-keybind = super+alt+j=resize_split:down,50
-keybind = super+alt+k=resize_split:up,50
-keybind = super+alt+l=resize_split:right,50
 
