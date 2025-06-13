@@ -487,6 +487,7 @@
             "Cooler Master SK652": true,
             "Cooler Master SK653": true,
             "Cooler Master Small ARGB": true,
+            "Corne": true,
             "Corsair 1000D Obsidian": true,
             "Corsair Commander Core": true,
             "Corsair Commander Pro": true,
@@ -1940,6 +1941,20 @@
                 "entertainment": false,
                 "ip": "",
                 "mac": ""
+            }
+        ]
+    },
+    "QMKOpenRGBDevices": {
+        "devices": [
+            {
+                "name": "Corne",
+                "usb_pid": "0004",
+                "usb_vid": "4653"
+            },
+            {
+                "name": "Corne",
+                "usb_pid": "0004",
+                "usb_vid": "4653"
             }
         ]
     },

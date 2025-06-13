@@ -22,6 +22,82 @@ return {
           client.server_capabilities.hoverProvider = false
         end
       },
+      -- ts_ls = {
+      --   init_options = {
+      --     plugins = {
+      --       {
+      --         name = '@vue/typescript-plugin',
+      --         location = vim.fn.stdpath('data') ..
+      --             '/mason/packages/vue-language-server/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin',
+      --         languages = { 'vue' }
+      --       }
+      --     }
+      --   },
+      --
+      --   filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+      -- },
+      -- volar = {
+      --   --   filetypes = { 'typescript', 'javascript', 'vue' },
+      --   opts = {
+      --     vue = {
+      --       hybridMode = true,
+      --     }
+      --   },
+      -- },
+      -- vtsls = {},
+      --   settings = {
+      --     typescript = {
+      --       inlayHints = {
+      --         enumMemberValues = {
+      --           enabled = true
+      --         },
+      --         functionLikeReturnTypes = {
+      --           enabled = true
+      --         },
+      --         propertyDeclarationTypes = {
+      --           enabled = true
+      --         },
+      --         parameterTypes = {
+      --           enabled = true,
+      --           suppressWhenArgumentMatchesName = true
+      --         },
+      --         variableTypes = {
+      --           enabled = true
+      --         }
+      --       }
+      --     }
+      --   }
+      -- },
+      -- ts_ls = {
+      --   filetypes = { 'typescript', 'javascript', 'vue' },
+      --   opts = {
+      --     plugins = {
+      --       {
+      --         name = "@vue/typescript-plugin",
+      --         location = vim.fn.stdpath 'data' ..
+      --             "/mason/packages/vue-language-server/node_modules/@vue/language-server/",
+      --         languages = { "vue" },
+      --       }
+      --     }
+      --   },
+      --   settings = {
+      --     typescript = {
+      --       tsserver = {
+      --         useSyntaxServer = false,
+      --       },
+      --       inlayHints = {
+      --         includeInlayParameterNameHints = 'all',
+      --         includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+      --         includeInlayFunctionParameterTypeHints = true,
+      --         includeInlayVariableTypeHints = true,
+      --         includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+      --         includeInlayPropertyDeclarationTypeHints = true,
+      --         includeInlayFunctionLikeReturnTypeHints = true,
+      --         includeInlayEnumMemberValueHints = true,
+      --       },
+      --     },
+      --   },
+      -- },
       pyright = {
         settings = {
           pyright = {
@@ -49,6 +125,8 @@ return {
       config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
       lspconfig[server_name].setup(config)
     end }
+
+    -- lspconfig['ts_ls'].setup({})
 
     require("mason-lspconfig").setup({ handlers = handlers, automatic_installation = true, ensure_installed = {} })
 
