@@ -1,8 +1,9 @@
 start-at-login = true
 
-after-startup-command = [
-  'exec-and-forget borders',
-]
+# using homebrew to bootstrap borders
+# after-startup-command = [
+#   'exec-and-forget borders',
+# ]
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
