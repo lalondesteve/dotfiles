@@ -1,0 +1,81 @@
+@define-color cyan #009fff;
+@define-color bg #1a1b25;
+@define-color bg-tr rgba(26, 27, 37, 0.55);
+@define-color alt-bg #0f0f16;
+@define-color white #ebf7ff;
+
+* {
+  font-size: 20px;
+  font-family: "Hack Nerd Font Regular";
+  /*"JetBrainsMono Nerd Font";*/
+  /*"Monaspace Neon Regular";*/
+  transition: 0.5s;
+  color: @cyan;
+}
+
+.modules-left,
+.modules-right {
+  margin: 0 10px;
+}
+
+#window {
+  padding-left: 12px;
+  background: @bg-tr;
+}
+
+*:hover {
+  color: @white;
+}
+
+
+*>button:hover {
+  color: @alt-bg;
+  background: @cyan;
+}
+
+window#waybar {
+  background: @bg-tr;
+}
+
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+  color: @alt-bg;
+  background: @bg-tr;
+  padding: 0;
+  font-size: 32px;
+}
+
+
+#custom-right-arrow-light {
+  padding-right: 4px;
+}
+
+#custom-left-arrow-light {
+  padding-left: 12px;
+}
+
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+  color: @cyan;
+  opacity: 0.75;
+  background: @alt-bg;
+  font-size: 32px;
+}
+
+widget {
+  background: @alt-bg;
+}
+
+#workspaces button.active {
+  color: @cyan;
+  border: solid 1px @cyan;
+}
+
+#clock,
+#pulseaudio,
+#memory,
+#cpu,
+#custom-updates,
+#disk {
+  padding: 0 10px;
+}

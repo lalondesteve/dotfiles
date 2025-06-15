@@ -4,71 +4,67 @@
 @define-color alt-bg #0f0f16;
 @define-color white #ebf7ff;
 
+
 * {
   font-size: 20px;
   font-family: "Hack Nerd Font Regular";
-  /*"JetBrainsMono Nerd Font";*/
-  /*"Monaspace Neon Regular";*/
   transition: 0.5s;
-  color: @cyan;
-}
-
-.modules-left,
-.modules-right {
-  margin: 0 10px;
-}
-
-#window {
-  padding-left: 12px;
-  background: @bg-tr;
+  border-radius: 4px;
 }
 
 *:hover {
   color: @white;
 }
 
-
-*>button:hover {
-  color: @alt-bg;
-  background: @cyan;
-}
-
-window#waybar {
-  background: @bg-tr;
-}
-
-#custom-right-arrow-dark,
-#custom-left-arrow-dark {
-  color: @alt-bg;
-  background: @bg-tr;
-  padding: 0;
-  font-size: 32px;
-}
-
-
-#custom-right-arrow-light {
-  padding-right: 4px;
-}
-
-#custom-left-arrow-light {
+#waybar {
   padding-left: 12px;
-}
-
-#custom-right-arrow-light,
-#custom-left-arrow-light {
-  color: @cyan;
-  opacity: 0.75;
-  background: @alt-bg;
-  font-size: 32px;
+  background: @bg-tr;
 }
 
 widget {
   background: @alt-bg;
 }
 
-#workspaces button.active {
+widget>* {
+  padding-top: 4px;
   color: @cyan;
+}
+
+#workspaces {
+  margin: 0 4px;
+  padding-top: 0px;
+}
+
+#workspaces button {
+  padding-top: 8px;
+  color: @cyan;
+}
+
+#workspaces button.active {
   border: solid 1px @cyan;
+}
+
+#workspaces button.urgent {
+  color: rgba(238, 46, 36, 1);
+}
+
+*>button:hover {
+  background: @white;
+}
+
+#tray {
+  margin: 0px 4px 4px 4px;
+  padding-top: 0px;
+  border-radius: 4px;
+  border-left: 1px solid @cyan;
+}
+
+#tray * {
+  padding: 0 8px;
+}
+
+#pulseaudio {
+  padding: 0;
 }
 
 #clock,
@@ -76,6 +72,29 @@ widget {
 #memory,
 #cpu,
 #custom-updates,
+#tray,
 #disk {
-  padding: 0 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#custom-right-arrow-dark,
+#custom-right-arrow-light,
+#custom-left-arrow-dark,
+#custom-left-arrow-light {
+  padding: 0;
+  margin: 0;
+  font-size: 28px;
+}
+
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+  color: @cyan;
+  background: @alt-bg;
+}
+
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+  color: @alt-bg;
+  background: @bg-tr;
 }

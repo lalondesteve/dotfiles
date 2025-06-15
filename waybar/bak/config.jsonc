@@ -5,7 +5,8 @@
   "mode": "dock",
   "modules-left": [
     "hyprland/workspaces",
-    "custom/left-arrow-light"
+    "custom/left-arrow-light",
+    "hyprland/window"
   ],
   "modules-center": [
     "custom/left-arrow-dark",
@@ -23,6 +24,22 @@
     "custom/updates",
     "tray"
   ],
+  "custom/left-arrow-dark": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/left-arrow-light": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/right-arrow-dark": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/right-arrow-light": {
+    "format": "",
+    "tooltip": false
+  },
   "hyprland/workspaces": {
     "disable-scroll": true,
     "format": "{name}",
@@ -33,6 +50,15 @@
       "3": [],
       "4": []
     }
+  },
+  "custom/updates": {
+    "format": "Updates {}",
+    "interval": 7200,
+    "exec": "i=$(checkupdates); echo $i|tr -dc '>' |wc -c ; echo $i | tr ' ' '\n' | xargs -L 4 | awk '{print $1;}' |tr '\n' '\r' ", // # of updates and tooltip details
+    "on-click-right": "i=$(checkupdates); echo $i|tr -dc '>' |wc -c ; echo $i | tr ' ' '\n' | xargs -L 4 | awk '{print $1;}' |tr '\n' '\r' ", // # of updates and tooltip details
+    "exec-if": "exit 0", // always run; consider advanced run conditions
+    "on-click": "kitty -e yay -Syu --noconfirm;i", // update system
+    "signal": 8
   },
   "clock#1": {
     "format": "{:%d %B}",
@@ -75,30 +101,6 @@
     "path": "/"
   },
   "tray": {
-    "icon-size": 24
-  },
-  "custom/updates": {
-    "format": "Updates {}",
-    "interval": 720,
-    "exec": "i=$(checkupdates); echo $i|tr -dc '>' |wc -c ; echo $i | tr ' ' '\n' | xargs -L 4 | awk '{print $1;}' |tr '\n' '\r' ", // # of updates and tooltip details
-    "on-click-right": "i=$(checkupdates); echo $i|tr -dc '>' |wc -c ; echo $i | tr ' ' '\n' | xargs -L 4 | awk '{print $1;}' |tr '\n' '\r' ", // # of updates and tooltip details
-    "exec-if": "exit 0", // always run; consider advanced run conditions
-    "signal": 8
-  },
-  "custom/left-arrow-dark": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/left-arrow-light": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/right-arrow-dark": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/right-arrow-light": {
-    "format": "",
-    "tooltip": false
-  },
+    "icon-size": 20
+  }
 }
