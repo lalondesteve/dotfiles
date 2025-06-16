@@ -4,8 +4,7 @@
   "position": "top",
   "mode": "dock",
   "modules-left": [
-    "hyprland/workspaces",
-    "custom/left-arrow-light"
+    "hyprland/workspaces"
   ],
   "modules-center": [
     "custom/left-arrow-dark",
@@ -15,7 +14,6 @@
     "custom/right-arrow-dark"
   ],
   "modules-right": [
-    "custom/right-arrow-light",
     "pulseaudio",
     "memory",
     "cpu",

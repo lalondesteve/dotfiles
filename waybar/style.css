@@ -1,4 +1,5 @@
 @define-color cyan #009fff;
+@define-color main @cyan;
 @define-color bg #1a1b25;
 @define-color bg-tr rgba(26, 27, 37, 0.55);
 @define-color alt-bg #0f0f16;
@@ -6,46 +7,84 @@
 
 
 * {
-  font-size: 20px;
+  font-size: 18px;
   font-family: "Hack Nerd Font Regular";
   transition: 0.5s;
-  border-radius: 4px;
+  color: @main;
 }
 
 *:hover {
   color: @white;
 }
 
-#waybar {
-  padding-left: 12px;
-  background: @bg-tr;
+window#waybar>* {
+  margin: 4px 12px;
 }
+
+window#waybar {
+  background-color: @bg-tr;
+  border: none;
+  box-shadow: none;
+}
+
+.modules-left>widget:last-child>*,
+.modules-right>widget:last-child>* {
+  padding-right: 8px;
+  margin-right: 8px;
+}
+
+.modules-left>widget:first-child>*,
+.modules-right>widget:first-child>* {
+  padding-left: 8px;
+  margin-left: 8px;
+}
+
+.modules-right>widget:last-child {
+  border-bottom-right-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.modules-right>widget:first-child {
+  border-bottom-left-radius: 12px;
+  border-top-left-radius: 12px;
+}
+
+.modules-left>widget:first-child {
+  border-bottom-left-radius: 12px;
+  border-top-left-radius: 12px;
+}
+
+.modules-left>widget:last-child {
+  border-bottom-right-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
 
 widget {
   background: @alt-bg;
 }
 
+
+/* .modules-right>widget:first-child { */
+/*   background-color: @bg-tr; */
+/* } */
+
 widget>* {
   padding-top: 4px;
-  color: @cyan;
 }
 
 #workspaces {
-  margin: 0 4px;
-  padding-top: 0px;
+  margin: 0;
+  padding-top: 0;
 }
 
 #workspaces button {
   padding-top: 8px;
-  color: @cyan;
 }
 
 #workspaces button.active {
-  border: solid 1px @cyan;
-}
-
-#workspaces button.urgent {
-  color: rgba(238, 46, 36, 1);
+  border: solid 1px @main;
+  border-radius: 8px;
 }
 
 *>button:hover {
@@ -56,7 +95,7 @@ widget>* {
   margin: 0px 4px 4px 4px;
   padding-top: 0px;
   border-radius: 4px;
-  border-left: 1px solid @cyan;
+  border-left: 1px solid @main;
 }
 
 #tray * {
@@ -91,7 +130,6 @@ widget>* {
 #custom-right-arrow-light,
 #custom-left-arrow-light {
   color: @bg-tr;
-  background: @alt-bg;
 }
 
 #custom-right-arrow-dark,
