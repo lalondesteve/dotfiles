@@ -1,123 +1,195 @@
 * {
-    font: "Monaspace Neon ligth 12";
-    g-spacing: 18px;
-    g-margin: 0;
-    b-color: #1d202bff;
-    fg-color: #c8d3f5ff;
-    fgp-color: #888888FF;
-    b-radius: 8px;
-    g-padding: 8px;
-    hl-color: #009fff55;
-    hlt-color: #ffb723cc;
-    alt-color: #40455255;
-    wbg-color: #1d202bff;
-    w-border: 2px solid;
-    w-border-color: #009fffff;
-    w-padding: 2px;
+    text-color:   #c8d3f5ff;
+    bg-color:     #1d202b55;
+    // bg-color: #00000055;
+    main-color:   #009fff;
+    border-width: 4px;
+    bg-alt-color: #1d202bff;  
+    alt-color:    #40455255;
+    hlt-color:    #ffb723cc;
+    border-radius:8px;
+ }
+
+configuration {
+    modi:     "drun,run";
+    font:     "Monaspace Neon light 12";
+    show-icons:          true;
+    display-drun:        "APPS";
+    display-run:         "RUN";
+    display-filebrowser: "FILES";
+    display-window:      "WINDOW";
+    drun-display-format: "{name}";
+
+    timeout {
+        action: "kb-cancel";
+        delay: 5;
+    }
+    filebrowser {
+        directories-first: true;
+        sorting-method: "name";
+    }
+    
 }
+
 
 window {
-    transparency: "real";
-    width: 30%;
-    border-radius: @b-radius;
-    background-color: @wbg-color;
-    border: @w-border;
-    border-color: @w-border-color;
-    padding: @w-padding;
-}
-
-listview {
-    columns: 3;
-    lines: 12;
-    cycle: false;
-    fixed-height: true;
-    fixed-width: true;
-    border: 0px;
-}
-
-prompt {
-    text-color: @fg-color;
-}
-
-inputbar {
-    children: ["prompt", "entry"];
-    spacing: @g-spacing;
-    border: @w-border;
-    border-color: @w-border-color;
-    border-radius: @b-radius;
-    padding: 8px;
-    margin: 0% 8% ;
-    background-color: @alt-color;
-}
-
-entry {
-    placeholder: "";
-    text-color: @fg-color;
-    placeholder-color: @fgp-color;
-    margin-left: 12px;
+    width:            900px;
+    x-offset:         0px;
+    y-offset:         0px;
+    spacing:          0px;
+    padding:          0px;
+    margin:           0px; 
+    color:            #FFFFFF;
+    border:           @border-width;
+    border-color:     @main-color;
+    cursor:           "default";
+    transparency:     "real";
+    location:         center;
+    anchor:           center;
+    fullscreen:       false;
+    enabled:          true;
+    border-radius:    @border-radius;
+    background-color: transparent;
 }
 
 mainbox {
-    spacing: @g-spacing;
-    margin: @g-margin;
-    padding: @g-padding;
-    children: ["inputbar", "listview", "message"];
+    enabled:          true;
+    orientation:      vertical;
+    spacing:          0px;
+    margin:           0px;
+    background-color: @bg-color;
+}
+
+imagebox {
+    padding:          18px;
+    background-color: transparent;
+    orientation:      vertical;
+    children:         ["listbox","imagebox", "inputbar" ];
+}
+
+listbox {
+    spacing:          20px;
+    background-color: transparent;
+    orientation:      vertical;
+    children:         [ "message", "listview" ];
+}
+
+dummy {
+    background-color: transparent;
+}
+
+inputbar {
+    enabled:          true;
+    text-color:       @text-color;
+    spacing:          10px;
+    padding:          15px;
+    margin:           13px 13px 0px 13px;
+    background-color: @alt-color;
+    children:         [ "textbox-prompt-colon", "entry" ];
+}
+
+textbox-prompt-colon {
+    enabled:          true;
+    expand:           false;
+    str:              "# >_";
+    padding:          0px 5px 0px 0px;
+    background-color: transparent;
+    text-color:       @text-color;
+}
+
+entry {
+    enabled:          true;
+    background-color: transparent;
+    text-color:       inherit;
+    cursor:           text;
+    placeholder:      "Search";
+    placeholder-color:inherit;
+}
+
+listview {
+    enabled:          true;
+    columns:          3;
+    lines:            8;
+    cycle:            false;
+    dynamic:          false;
+    scrollbar:        false;
+    layout:           vertical;
+    reverse:          false;
+    fixed-height:     true;
+    fixed-columns:    true;
+    spacing:          0px;
+    padding:          10px;
+    margin:           0px;
+    background-color: @bg-color;
+    border:           0;
 }
 
 element {
-    spacing: @g-spacing;
-    margin: @g-margin;
-    padding: @g-padding;
-    background-color: transparent;
+    enabled:  true;
+    padding:  10px;
+    margin:   5px;
+    cursor:   pointer;
 }
 
 element-text {
-    highlight: inherit;
-    text-color: @fg-color;
-    vertical-align: 0.5;
-    horizontal-align: 0.5;
-  }
+    background-color: transparent;
+    text-color:       inherit;
+    cursor:           inherit;
+    vertical-align:   0.5;
+    horizontal-align: 0.0;
+}
 
 element-icon {
-    size: 48px;
     background-color: transparent;
-  }
+    text-color:       inherit;
+    size:             24px;
+    cursor:           inherit;
+}
 
 element normal.normal {
-	background-color: transparent;
-	text-color: @fg-color;
-}
-
-element alternate.normal {
-	background-color: @alt-color;
-	text-color: @fg-color;
-}
-
-element selected.active {
-	background-color: @hl-color;
-	text-color: @hlt-color;
+    background-color: @bg-alt-color;
+    text-color:       @text-color;
 }
 
 element selected.normal {
-	background-color: @hl-color;
-	text-color: @hlt-color;
+    background-color: @hlt-color;
+    text-color:       @text-color;
+}
+
+element selected.active {
+    background-color: @hlt-color;
+    text-color:       @text-color;
+}
+
+
+element alternate.normal {
+    background-color: @alt-color;
+    text-color:       @text-color;
 }
 
 message {
-    background-color: @b-color;
+    background-color: transparent;
+    border:           0px;
+    margin:           20px 0px 0px 0px;
+    padding:          0px;
+    spacing:          0px;
+    border-radius:    @border-radius;
 }
 
-configuration {
-  modi: "drun";
-  show-icons: true;
-  display-drun: "# >_";
-
-  timeout {
-      action: "kb-cancel";
-      delay:  0;
-  }
-  filebrowser {
-      directories-first: true;
-      sorting-method:    "name";
-  }
+textbox {
+    padding:          15px;
+    margin:           0px;
+    border-radius:    0px;
+    background-color: @bg-color;
+    text-color:       @text-color;
+    vertical-align:   0.5;
+    horizontal-align: 0.0;
 }
+
+error-message {
+    padding:          15px;
+    border-radius:    0.7em;
+    background-color: #2B3339;
+    text-color:       @text-color;
+}
+

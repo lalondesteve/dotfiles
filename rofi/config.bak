@@ -1,0 +1,123 @@
+* {
+    font: "Monaspace Neon light 12";
+    g-spacing: 8px;
+    g-margin: 0;
+    b-color: #1d202bff;
+    fg-color: #c8d3f5ff;
+    fgp-color: #888888FF;
+    b-radius: 8px;
+    g-padding: 8px;
+    hl-color: #009fff55;
+    hlt-color: #ffb723cc;
+    alt-color: #40455255;
+    wbg-color: #1d202bff;
+    w-border: 2px solid;
+    w-border-color: #009fffff;
+    w-padding: 8px;
+}
+
+window {
+    transparency: "real";
+    width: 35%;
+    border-radius: @b-radius;
+    background-color: @wbg-color;
+    border: @w-border;
+    border-color: @w-border-color;
+    padding: @w-padding;
+}
+
+listview {
+    columns: 1;
+    lines: 12;
+    cycle: false;
+    fixed-height: true;
+    fixed-width: true;
+    border: 0px;
+}
+
+prompt {
+    text-color: @fg-color;
+}
+
+inputbar {
+    children: ["prompt", "entry"];
+    spacing: @g-spacing;
+    border: @w-border;
+    border-color: @w-border-color;
+    border-radius: @b-radius;
+    padding: 8px;
+    margin: 0% 8% ;
+    background-color: @alt-color;
+}
+
+entry {
+    placeholder: "";
+    text-color: @fg-color;
+    placeholder-color: @fgp-color;
+    margin-left: 8px;
+}
+
+mainbox {
+    spacing: @g-spacing;
+    margin: @g-margin;
+    padding: @g-padding;
+    children: ["inputbar", "listview", "message"];
+}
+
+element {
+    spacing: @g-spacing;
+    margin: @g-margin;
+    padding: @g-padding;
+    background-color: transparent;
+}
+
+element-text {
+    highlight: inherit;
+    text-color: @fg-color;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+  }
+
+element-icon {
+    size: 18px;
+    background-color: transparent;
+  }
+
+element normal.normal {
+	background-color: transparent;
+	text-color: @fg-color;
+}
+
+element alternate.normal {
+	background-color: @alt-color;
+	text-color: @fg-color;
+}
+
+element selected.active {
+	background-color: @hl-color;
+	text-color: @hlt-color;
+}
+
+element selected.normal {
+	background-color: @hl-color;
+	text-color: @hlt-color;
+}
+
+message {
+    background-color: @b-color;
+}
+
+configuration {
+  modi: "drun";
+  show-icons: true;
+  display-drun: "# >_";
+
+  timeout {
+      action: "kb-cancel";
+      delay:  5;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+}
