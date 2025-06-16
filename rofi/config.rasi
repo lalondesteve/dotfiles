@@ -2,17 +2,17 @@
     font: "Monaspace Neon ligth 12";
     g-spacing: 18px;
     g-margin: 0;
-    b-color: #000000FF;
+    b-color: #1d202bff;
     fg-color: #c8d3f5ff;
     fgp-color: #888888FF;
     b-radius: 8px;
     g-padding: 8px;
-    hl-color: #33ccffcc;
-    hlt-color: #000000FF;
-    alt-color: #1a1b26ff;
-    wbg-color: #222436CC;
+    hl-color: #009fff55;
+    hlt-color: #ffb723cc;
+    alt-color: #40455255;
+    wbg-color: #1d202bff;
     w-border: 2px solid;
-    w-border-color: #33ccffee;
+    w-border-color: #009fffff;
     w-padding: 2px;
 }
 
@@ -104,7 +104,7 @@ element selected.normal {
 }
 
 message {
-    background-color: #7c818cff;
+    background-color: @b-color;
 }
 
 configuration {

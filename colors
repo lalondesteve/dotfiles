@@ -5,11 +5,18 @@ export TEXTCOLOR="#33CCFF"
 export ALERT="#CB62DB" 
 export GREEN1="#40d69b"
 export YELLOW="#efef7f"
-export CYAN="#00afff"
+export CYAN="#009fff"
 export ORANGE="#ffb723"
+export MAINCOLOR=CYAN
+export SECONDARYCOLOR=ORANGE
 
 
 
 # https://coolors.co/414346-1a1a1a-1a1b25-009fff-99c1f1
 
-
+waybar :
+# @define-color cyan #009fff;
+# @define-color bg #1a1b25;
+# @define-color bg-tr rgba(26, 27, 37, 0.55);
+# @define-color alt-bg #0f0f16;
+# @define-color white #ebf7ff;

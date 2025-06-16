@@ -16,9 +16,9 @@ palette = 'tokyodawn'
 style = "magenta"
 
 [character]
-success_symbol = " [❯](#40d69b)"
-error_symbol = " [❯](#ff007c)"
-vimcmd_symbol = " [❮](#ff8723)"
+success_symbol = " [❯](cyan)"
+error_symbol = " [❯](#red)"
+vimcmd_symbol = " [❮](#orange)"
 
 [git_branch]
 format = "[$branch]($style)"
@@ -62,11 +62,10 @@ style = 'orange'
 
 
 [palettes.tokyodawn]
-cyan = '#00afff'
+cyan = '#009fff'
 yellow = '#efef7f'
 green = '#40d69b'
 magenta = '#eb75ce'
 orange = '#ffb723'
 red = "#db4b4b"
 alert = "#cb62bd"
-

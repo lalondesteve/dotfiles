@@ -65,6 +65,7 @@ widget>* {
 
 #pulseaudio {
   padding: 0;
+  margin-left: 4px;
 }
 
 #clock,
@@ -89,7 +90,7 @@ widget>* {
 
 #custom-right-arrow-light,
 #custom-left-arrow-light {
-  color: @cyan;
+  color: @bg-tr;
   background: @alt-bg;
 }
 
