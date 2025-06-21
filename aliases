@@ -18,6 +18,7 @@ export PATH=~/.local/bin:$PATH
 eval "$(starship init $SHELL)"
 
 alias lazy='NVIM_APPNAME=lazy nvim'
+alias nvim='lazy'
 alias ....='cd ../..'
 alias ..='cd ..'
 alias ve='source .venv/bin/activate'
@@ -26,7 +27,7 @@ alias clera='clear'
 alias uvim='uv run nvim'
 alias v='lazy'
 alias vim='lazy'
-alias sv='sudo nvim'
+alias sv='sudo lazy'
 alias u="uv run"
 alias upgrade="uv lock --upgrade"
 alias pre-commit="uv run pre-commit install;uv run pre-commit install --hook-type pre-push"
