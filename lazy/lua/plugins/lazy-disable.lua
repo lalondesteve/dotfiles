@@ -16,5 +16,11 @@ return {
       -- bigfile = { enabled = true },
       -- quickfile = { enabled = true },
     },
+    keys = {
+      { "<leader>e", false },
+      { "<leader>E", false },
+      { "<leader>fe", false },
+      { "<leader>FE", false },
+    },
   },
 }

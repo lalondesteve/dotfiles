@@ -3,7 +3,12 @@ return {
     "j-hui/fidget.nvim",
     priority = 10,
     lazy = false,
-    opts = { display = { done_ttl = 5 }, notification = { override_vim_notify = true } },
+    opts = {
+      progress = {
+        display = { done_ttl = 5 },
+      },
+      notification = { override_vim_notify = true },
+    },
     keys = {
       {
         "<leader>nn",

@@ -1,6 +1,6 @@
 local map = vim.keymap.set
 
-map("n", "<leader>e", vim.cmd.Ex, { desc = "File Explorer" })
+-- map("n", "<leader>e", vim.cmd.Ex, { desc = "File Explorer" })
 map({ "n", "v" }, "<leader>te", "<cmd>:term<cr>i", { desc = "Open Terminal" })
 
 -- lazy
