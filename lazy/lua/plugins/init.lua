@@ -1,15 +1,9 @@
-if true then
-  return {}
-end
 return {
-  { import = "lazyvim.plugins.extras.lang.python" },
-  { import = "lazyvim.plugins.extras.lang.typescript" },
-  { import = "lazyvim.plugins.extras.lang.vue" },
   {
     "j-hui/fidget.nvim",
     priority = 10,
     lazy = false,
-    opts = { notification = { override_vim_notify = true } },
+    opts = { display = { done_ttl = 5 }, notification = { override_vim_notify = true } },
     keys = {
       {
         "<leader>nn",

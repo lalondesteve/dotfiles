@@ -6,7 +6,7 @@ return {
         settings = {
           pyright = {
             disableOrganizeImport = true,
-            disableTaggedHints = true,
+            disableTaggedHints = true
           },
           python = {
             analysis = {

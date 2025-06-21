@@ -1,13 +1,14 @@
 return {
-  -- { "folke/noice.nvim", enabled = false },
+  { "nvim-neo-tree/neo-tree.nvim", enabled = false },
   {
     "folke/snacks.nvim",
     opts = {
-      -- dashboard = { enabled = false },
+      dashboard = { enabled = false },
       explorer = { enabled = false },
+      picker = { enabled = true },
       -- indent = { enabled = true },
       -- input = { enabled = true },
-      -- notifier = { enabled = false },
+      notifier = { enabled = false },
       -- scope = { enabled = true },
       -- scroll = { enabled = true },
       -- statuscolumn = { enabled = true },
