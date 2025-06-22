@@ -1,21 +1,35 @@
 return {
-  -- "echasnovski/mini.nvim",
-  { "echasnovski/mini.surround", version = false, config = true },
-  { "echasnovski/mini.ai",       version = false, config = true },
   {
-    "echasnovski/mini.pairs",
-    event = "VeryLazy",
-    opts = {
-      modes = { insert = true, command = true, terminal = false },
-      -- skip autopair when next character is one of these
-      skip_next = [=[[%w%%%'%[%"%.%`%$]]=],
-      -- skip autopair when the cursor is inside these treesitter nodes
-      skip_ts = { "string" },
-      -- skip autopair when next character is closing pair
-      -- and there are more closing pairs than opening pairs
-      skip_unbalanced = true,
-      -- better deal with markdown code blocks
-      markdown = true,
+    "echasnovski/mini.nvim",
+    version = "*",
+    {
+
+      "echasnovski/mini.files",
+      lazy = false,
+      opts = {
+        windows = {
+          width_preview = 60,
+          width_focus = 60,
+        },
+
+        options = {
+          use_as_default_explorer = true,
+        },
+        mappings = {
+          go_in_plus = "<cr>",
+        },
+      },
+      keys = {
+        {
+          "<leader>e",
+          function()
+            require("mini.files").open(vim.uv.cwd(), true)
+          end,
+          desc = "Explorer (mini.files)",
+        },
+        { "<leader>fm", false },
+        { "<leader>fM", false },
+      },
     },
-  }
+  },
 }

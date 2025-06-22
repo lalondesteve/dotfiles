@@ -1,10 +1,14 @@
 return {
-  "nvim-lua/plenary.nvim",
   {
     "j-hui/fidget.nvim",
     priority = 10,
     lazy = false,
-    opts = { notification = { override_vim_notify = true } },
+    opts = {
+      progress = {
+        display = { done_ttl = 5 },
+      },
+      notification = { override_vim_notify = true },
+    },
     keys = {
       {
         "<leader>nn",
@@ -18,20 +22,4 @@ return {
       },
     },
   },
-  {
-    'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
-    -- enabled = false,
-    -- main = "nvim-treesitter.configs",
-    lazy = false,
-    opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'javascript', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'python', 'query', 'vim', 'vimdoc' },
-      auto_install = true,
-      highlight = {
-        enable = true,
-      },
-      indent = { enable = true },
-    },
-  },
-  { "mfussenegger/nvim-lint", event = { "BufReadPost", "BufWritePost", "BufNewFile" } },
 }
