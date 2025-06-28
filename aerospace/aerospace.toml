@@ -33,7 +33,7 @@ F = 'secondary'
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 # bad interaction with CSA keyboard
 # TODO: find another keybinding
-alt-shift-ctrl-t = 'layout tiles horizontal vertical'
+alt-shift-ctrl-t = 'layout h_tiles v_tiles'
 # alt-comma = 'layout accordion horizontal vertical'
 
 # focus

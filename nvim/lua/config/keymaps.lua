@@ -3,6 +3,11 @@ local map = vim.keymap.set
 -- map("n", "<leader>e", vim.cmd.Ex, { desc = "File Explorer" })
 map({ "n", "v" }, "<leader>te", "<cmd>:term<cr>i", { desc = "Open Terminal" })
 
+-- working with lua (from teej_dev)
+map("n", "<leader><leader>r", "<cmd>source %<cr>", { desc = "lua run current file (lua)" })
+map("n", "<leader>r", ":.lua<cr>", { desc = "lua run current line" })
+map("v", "<leader>r", ":lua<cr>", { desc = "lua run current line" })
+
 -- lazy
 map("n", "<leader>ll", "<cmd>Lazy<cr>", { desc = "Lazy" })
 map("n", "<leader>lx", "<cmd>LazyExtras<cr>", { desc = "LazyExtras" })
@@ -27,4 +32,4 @@ map({ "n", "v" }, "<leader>bn", vim.cmd.bnext, { desc = "Go to Next Buffer" })
 map({ "n", "v" }, "<leader>bp", vim.cmd.bprev, { desc = "Go to Previous Buffer" })
 map({ "n", "v" }, "<leader>bls", vim.cmd.buffers, { desc = "List All Buffers" })
 
-map({ "n", "v" }, "<leader>te", "<cmd>:term<cr>i", { desc = "Open Terminal" })
+map({ "n", "v" }, "<leader>t", "<cmd>:term<cr>i", { desc = "Open Terminal" })

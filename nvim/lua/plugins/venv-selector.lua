@@ -9,8 +9,8 @@ return {
   branch = "regexp",
   lazy = false,
   keys = {
-    { "<leader>v",  group = "VenvSelector" },
-    { "<leader>vs", "<cmd>VenvSelect<cr>",       desc = "Select Virtualenv" },
-    { "<leader>vc", "<cmd>VenvSelectCached<cr>", desc = "Select Cached Virtualenv" },
-  }
+    { "<leader>v", group = "VenvSelector", { desc = "VenvSelector" } },
+    { "<leader>vs", "<cmd>VenvSelect<cr>", { desc = "Select Virtualenv" } },
+    { "<leader>vc", "<cmd>VenvSelectCached<cr>", { desc = "Select Cached Virtualenv" } },
+  },
 }
