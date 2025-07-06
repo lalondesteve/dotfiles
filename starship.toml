@@ -13,7 +13,16 @@ $character"""
 palette = 'tokyodawn'
 
 [directory]
+style = "green"
+
+[hostname]
+ssh_symbol = "@"
 style = "magenta"
+format = "[$ssh_symbol](orange)[$hostname]($style) "
+
+[username]
+style_user = "cyan"
+format = "[$user]($style)"
 
 [character]
 success_symbol = " [❯](cyan)"
@@ -22,7 +31,7 @@ vimcmd_symbol = " [❮](#orange)"
 
 [git_branch]
 format = "[$branch]($style)"
-style = "cyan"
+style = "magenta"
 
 [git_status]
 format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
