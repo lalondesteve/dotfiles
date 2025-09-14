@@ -12,7 +12,7 @@ fuck() {
     eval "$(thefuck --alias)"
     fuck "$@"
 }
-# send add __pycache__ folders to /tmp
+# send all __pycache__ folders to /tmp
 export PYTHONPYCACHEPREFIX=/tmp
 
 eval "$(starship init $SHELL)"

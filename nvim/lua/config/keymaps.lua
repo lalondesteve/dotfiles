@@ -33,3 +33,8 @@ map({ "n", "v" }, "<leader>bp", vim.cmd.bprev, { desc = "Go to Previous Buffer" 
 map({ "n", "v" }, "<leader>bls", vim.cmd.buffers, { desc = "List All Buffers" })
 
 map({ "n", "v" }, "<leader>t", "<cmd>:term<cr>i", { desc = "Open Terminal" })
+
+-- map({ "n", "v" }, "Ç", "{")
+-- map({ "n", "v" }, "ç", "}")
+
+require("config.csm")
