@@ -1,4 +1,5 @@
 {
+    "global": { "show_in_menu_bar": false },
     "profiles": [
         {
             "complex_modifications": {
@@ -312,7 +313,8 @@
                         "product_id": 49271,
                         "vendor_id": 1133
                     },
-                    "ignore": false
+                    "ignore": false,
+                    "mouse_flip_vertical_wheel": true
                 },
                 {
                     "identifiers": {
@@ -322,6 +324,12 @@
                         "vendor_id": 9114
                     },
                     "ignore": false
+                }
+            ],
+            "fn_function_keys": [
+                {
+                    "from": { "key_code": "f5" },
+                    "to": [{ "key_code": "f5" }]
                 }
             ],
             "name": "Default profile",

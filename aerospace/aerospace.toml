@@ -7,7 +7,7 @@ start-at-login = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
-enable-normalization-opposite-orientation-for-nested-containers = true
+enable-normalization-opposite-orientation-for-nested-containers =true 
 
 default-root-container-layout = 'tiles'
 default-root-container-orientation = 'auto'
@@ -29,12 +29,15 @@ D = 'secondary'
 F = 'secondary'
 
 [mode.main.binding]
-
+# No need for hiding when using AeroSpace
+cmd-h = [] # Disable "hide application"
+cmd-alt-h = [] # Disable "hide others"
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 # bad interaction with CSA keyboard
 # TODO: find another keybinding
-alt-shift-ctrl-t = 'layout h_tiles v_tiles'
 # alt-comma = 'layout accordion horizontal vertical'
+
+alt-shift-ctrl-t = 'layout h_tiles v_tiles'
 
 # focus
 alt-h = 'focus left'
@@ -47,6 +50,12 @@ alt-shift-h = 'move left'
 alt-shift-j = 'move down'
 alt-shift-k = 'move up'
 alt-shift-l = 'move right'
+
+#join
+ctrl-alt-shift-h = ['join-with left', 'mode main']
+ctrl-alt-shift-j = ['join-with down', 'mode main']
+ctrl-alt-shift-k = ['join-with up', 'mode main']
+ctrl-alt-shift-l = ['join-with right', 'mode main']
 
 # resize
 alt-shift-ctrl-minus = 'resize smart -50'
@@ -90,11 +99,6 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 alt-shift-semicolon = 'mode service'
 
-alt-ctrl-shift-h = ['join-with left', 'mode main']
-alt-ctrl-shift-j = ['join-with down', 'mode main']
-alt-ctrl-shift-k = ['join-with up', 'mode main']
-alt-ctrl-shift-l = ['join-with right', 'mode main']
-
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
@@ -103,6 +107,21 @@ f = [
   'mode main',
 ]
 
+
+[[on-window-detected]]
+if.app-id = 'org.pqrs.Karabiner-Elements'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'org.pqrs.Karabiner-EventViewer'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.1password.1password'
+if.during-aerospace-startup = true
+check-further-callbacks = true
+run = 'layout floating'
+
 [[on-window-detected]]
 if.window-title-regex-substring = "Karabiner"
-run = ["layout floating"]
+run = 'layout floating'

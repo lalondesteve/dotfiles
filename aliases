@@ -1,21 +1,32 @@
 # include .config/alias in *shrc 
 # [ -f $HOME/.config/aliases ] && . $HOME/.config/aliases
 
-[ -s /usr/share/nvm/init-nvm.sh ] && \. /usr/share/nvm/init-nvm.sh
-[ -s s~/.local/bin:$PATH ] && export PATH=~/.local/bin:$PATH
+[[ -s /usr/share/nvm/init-nvm.sh ]] && \. /usr/share/nvm/init-nvm.sh
+[[ -d ~/.local/bin ]] && export PATH=~/.local/bin:$PATH
+command -v pacman >/dev/null && spac() { sudo pacman -Syu --noconfirm "$@"; }
+command -v yay >/dev/null && syay() { yay -Syu --noconfirm "$@"; }
 
-[ -n "$(command -v pacman)" ] && spac() { sudo pacman -Syu --noconfirm "$@"; }
-[ -n "$(command -v yay)" ]  && syay() { yay -Syu --noconfirm "$@"; }
-
-
-[ -n "$(command -v thefuck)" ] && eval $(thefuck --alias)
-
+# Lazy Loading Thefuck
+fuck() {
+    unset -f fuck
+    eval "$(thefuck --alias)"
+    fuck "$@"
+}
 # send add __pycache__ folders to /tmp
 export PYTHONPYCACHEPREFIX=/tmp
 
-export PATH="$(yarn global bin):$PATH"
-export PATH=~/.local/bin:$PATH
 eval "$(starship init $SHELL)"
+
+_build_path() {
+    local paths=(
+        ~/.local/bin
+        "$(command -v go >/dev/null && go env GOPATH)/bin"
+        "$(command -v yarn >/dev/null && yarn global bin)"
+        "$PATH"
+    )
+    printf "%s" "$(IFS=:; echo "${paths[*]}")"
+}
+export PATH=$(_build_path)
 
 alias ....='cd ../..'
 alias ..='cd ..'
@@ -28,9 +39,12 @@ alias sv='sudo nvim'
 alias u="uv run"
 alias upgrade="uv lock --upgrade"
 alias src="source $(echo '~/.*shrc')"
-[ -n "$(command -v delta)" ] && d() { delta -s --dark --hyperlinks "$@"; }
 
-if [ -n "$(command -v brew )" ]; then
-  [ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"
-  [ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm"
-fi
+command -v delta >/dev/null && d() { delta -s --dark --hyperlinks "$@"; }
+
+NVM_PREFIX=$(brew --prefix nvm)
+command -v brew >/dev/null && {
+  [[ -s "$NVM_PREFIX/nvm.sh" ]] && \. "$NVM_PREFIX/nvm.sh"
+  [[ -s "$NVM_PREFIX/etc/bash_completion.d/nvm" ]] && \. "$NVM_PREFIX/etc/bash_completion.d/nvm"
+}
+
