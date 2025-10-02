@@ -50,7 +50,7 @@ return {
           color = { gui = "bold" },
         },
         "fileformat",
-        { "location", padding = { left = 0, right = 0 } },
+        { "location", padding = { left = 0, right = 1 } },
       },
       lualine_z = {},
     },
