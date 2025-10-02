@@ -1,3 +1,6 @@
+if true then
+  return {}
+end
 return {
   "neovim/nvim-lspconfig",
   opts = {
@@ -6,7 +9,7 @@ return {
         settings = {
           pyright = {
             disableOrganizeImport = true,
-            disableTaggedHints = true
+            disableTaggedHints = true,
           },
           python = {
             analysis = {

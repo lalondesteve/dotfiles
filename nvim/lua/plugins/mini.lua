@@ -1,10 +1,10 @@
 return {
   {
-    "echasnovski/mini.nvim",
+    "nvim-mini/mini.nvim",
     version = "*",
     {
 
-      "echasnovski/mini.files",
+      "nvim-mini/mini.files",
       lazy = false,
       opts = {
         windows = {

@@ -9,6 +9,8 @@ return {
       colors.yellow = "#efef7f"
       colors.magenta = "#eb75ce"
       colors.cyan = "#00afff"
+      colors.bg = "#1e1c2b"
+      colors.bg_dark1 = "#1b1e2d"
     end,
   },
   init = function()

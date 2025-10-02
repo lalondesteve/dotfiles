@@ -5,7 +5,7 @@ return {
     opts = {
       dashboard = { enabled = false },
       explorer = { enabled = false },
-      picker = { enabled = true },
+      -- picker = { enabled = true },
       -- indent = { enabled = true },
       -- input = { enabled = true },
       notifier = { enabled = false },
