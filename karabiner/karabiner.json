@@ -5,7 +5,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "hold ù to ctrl",
+                        "description": "Caps to Escape - Hold Caps to Hyper",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -21,11 +21,36 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "grave_accent_and_tilde",
+                                    "key_code": "caps_lock",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "key_code": "right_control" }],
-                                "to_if_alone": [{ "key_code": "grave_accent_and_tilde" }],
+                                "to": [
+                                    {
+                                        "key_code": "right_shift",
+                                        "modifiers": ["right_control", "right_option", "command"]
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "is_keyboard": true,
+                                                "product_id": 4,
+                                                "vendor_id": 18003
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "escape",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "caps_lock" }],
                                 "type": "basic"
                             }
                         ]
@@ -270,7 +295,7 @@
                         ]
                     },
                     {
-                        "description": "Caps to Escape - Hold Caps to Hyper",
+                        "description": "hold ù to ctrl",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -286,16 +311,11 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "caps_lock",
+                                    "key_code": "grave_accent_and_tilde",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "right_shift",
-                                        "modifiers": ["right_control", "right_option", "command"]
-                                    }
-                                ],
-                                "to_if_alone": [{ "key_code": "escape" }],
+                                "to": [{ "key_code": "right_control" }],
+                                "to_if_alone": [{ "key_code": "grave_accent_and_tilde" }],
                                 "type": "basic"
                             }
                         ]
