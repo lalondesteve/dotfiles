@@ -8,7 +8,20 @@ return {
     },
     sections = {
       lualine_a = {},
-      lualine_c = { "mode", "diff" },
+      lualine_b = { "branch" },
+      lualine_c = {
+        "mode",
+        "diff",
+        {
+          "require('noice').api.status.mode.get()",
+          cond = function()
+            return package.loaded["noice"] and require("noice").api.status.mode.has()
+          end,
+          color = function()
+            return { fg = Snacks.util.color("Constant") }
+          end,
+        },
+      },
       lualine_x = {
         "diagnostics",
         {
@@ -31,15 +44,6 @@ return {
           file_status = false,
           padding = { right = 1 },
         },
-        -- {
-        --   function()
-        --     return "" .. (vim.o.modified and "*" or " ")
-        --   end,
-        --   padding = {},
-        --   color = function()
-        --     return { fg = Snacks.util.color("Special") }
-        --   end,
-        -- },
         { "filetype", padding = { right = 1 } },
       },
       lualine_y = {
