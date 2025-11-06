@@ -1,4 +1,12 @@
 return {
+  -- {
+  --   "Exafunction/windsurf.vim",
+  --   diagnosticProvider = false,
+  -- },
+  -- {
+  --   "Exafunction/codeium.nvim",
+  --   diagnosticProvider = false,
+  -- },
   {
     "j-hui/fidget.nvim",
     priority = 10,
