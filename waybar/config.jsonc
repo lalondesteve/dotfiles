@@ -7,11 +7,9 @@
     "hyprland/workspaces"
   ],
   "modules-center": [
-    "custom/left-arrow-dark",
     "clock#1",
     "clock#2",
-    "clock#3",
-    "custom/right-arrow-dark"
+    "clock#3"
   ],
   "modules-right": [
     "pulseaudio",
@@ -34,15 +32,25 @@
   },
   "clock#1": {
     "format": "{:%d %B}",
-    "tooltip": false
+    "tooltip": false,
+    "align": 0
   },
   "clock#2": {
     "format": "{:%H:%M}",
-    "tooltip": false
+    "tooltip": false,
   },
   "clock#3": {
     "format": "{:%A}",
-    "tooltip": false
+    "tooltip": false,
+    "align": 1
+  },
+  "group/clock": {
+    "orientation": "inherit",
+    "modules": [
+      "clock#1",
+      "clock#2",
+      "clock#3"
+    ]
   },
   "pulseaudio": {
     "format": "{icon}   {volume:2}%",

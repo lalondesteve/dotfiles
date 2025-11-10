@@ -60,14 +60,15 @@ window#waybar {
 }
 
 
-widget {
+.modules-left>widget,
+.modules-right>widget{
   background: @alt-bg;
 }
 
+.modules-center{
+  padding: 0 0 0 5px;
+}
 
-/* .modules-right>widget:first-child { */
-/*   background-color: @bg-tr; */
-/* } */
 
 widget>* {
   padding-top: 4px;
@@ -76,6 +77,15 @@ widget>* {
 #workspaces {
   margin: 0;
   padding-top: 0;
+}
+
+.modules-center:first-child{
+  margin-left: 120px
+}
+
+#clock {
+  margin-right: 12px;
+  padding: 0;
 }
 
 #workspaces button {
@@ -107,7 +117,6 @@ widget>* {
   margin-left: 4px;
 }
 
-#clock,
 #pulseaudio,
 #memory,
 #cpu,

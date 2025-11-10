@@ -37,13 +37,13 @@ alias uvim='uv run nvim'
 alias v='nvim'
 alias sv='sudo nvim'
 alias u="uv run"
-alias upgrade="uv lock --upgrade"
+alias upg="uv lock --upgrade"
 alias src="source $(echo '~/.*shrc')"
 
 command -v delta >/dev/null && d() { delta -s --dark --hyperlinks "$@"; }
 
-NVM_PREFIX=$(brew --prefix nvm)
 command -v brew >/dev/null && {
+  NVM_PREFIX=$(brew --prefix nvm)
   [[ -s "$NVM_PREFIX/nvm.sh" ]] && \. "$NVM_PREFIX/nvm.sh"
   [[ -s "$NVM_PREFIX/etc/bash_completion.d/nvm" ]] && \. "$NVM_PREFIX/etc/bash_completion.d/nvm"
 }
