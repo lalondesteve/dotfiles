@@ -1,20 +1,21 @@
-
+#theme
 theme=TokyoNight Night
+
+# Font
 font-family=Monaspace Neon
+font-style=Regular
 font-size=13
+
+#window
+window-theme=ghostty
 window-padding-x=10
 window-padding-y=8,0
+macos-window-shadow = false
 
+#gtk
 gtk-titlebar=false
 gtk-tabs-location=bottom
 gtk-wide-tabs=false
-
-# JetbrainsMono Nerd Font    
-# Hack Nerd Font
-# RobotoMono Nerd Font
-# UbuntuMono Nerd Font
-
-macos-window-shadow = false
 
 mouse-hide-while-typing = true
 term = xterm-ghostty
