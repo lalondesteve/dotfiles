@@ -16,9 +16,9 @@ palette = 'tokyodawn'
 
 [directory]
 style = "green"
-truncation_length = 3
+truncation_length = 5
 truncation_symbol = "../"
-repo_root_style = "bold cyan"
+repo_root_style = "cyan"
 repo_root_format = "[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) "
 
 [hostname]
