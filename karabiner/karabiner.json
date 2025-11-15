@@ -84,11 +84,10 @@
                     },
                     {
                         "description": "Corne copy paste undo cut",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "f22",
+                                    "key_code": "copy",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
@@ -101,7 +100,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "f23",
+                                    "key_code": "paste",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
@@ -157,6 +156,18 @@
                         "description": "hyper + hjkl",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "is_keyboard": true,
+                                                "product_id": 4,
+                                                "vendor_id": 18003
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": { "mandatory": ["shift", "option", "control", "command"] }
@@ -277,10 +288,22 @@
                         "description": "Left Shift + Space to Underscore",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "is_keyboard": true,
+                                                "product_id": 4,
+                                                "vendor_id": 18003
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "spacebar",
                                     "modifiers": {
-                                        "mandatory": ["shift"],
+                                        "mandatory": ["left_shift"],
                                         "optional": ["caps_lock"]
                                     }
                                 },
