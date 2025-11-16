@@ -28,6 +28,7 @@ _build_path() {
 }
 export PATH=$(_build_path)
 
+alias cd..='cd ..'
 alias cd....='cd ../../..'
 alias cd...='cd ../..'
 alias ve='source .venv/bin/activate'
