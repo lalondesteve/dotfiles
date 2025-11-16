@@ -77,6 +77,7 @@ alt-shift-cmd-ctrl-a = 'workspace A'
 alt-shift-cmd-ctrl-s = 'workspace S'
 alt-shift-cmd-ctrl-d = 'workspace D'
 alt-shift-cmd-ctrl-f = 'workspace F'
+alt-shift-cmd-ctrl-g = 'workspace G'
 
 alt-shift-ctrl-1 = 'move-node-to-workspace 1'
 alt-shift-ctrl-2 = 'move-node-to-workspace 2'
@@ -91,6 +92,7 @@ alt-shift-ctrl-a = 'move-node-to-workspace A'
 alt-shift-ctrl-s = 'move-node-to-workspace S'
 alt-shift-ctrl-d = 'move-node-to-workspace D'
 alt-shift-ctrl-f = 'move-node-to-workspace F'
+alt-shift-ctrl-g = 'move-node-to-workspace G'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -116,11 +118,11 @@ run = 'layout floating'
 if.app-id = 'org.pqrs.Karabiner-EventViewer'
 run = 'layout floating'
 
-[[on-window-detected]]
-if.app-id = 'com.1password.1password'
-if.during-aerospace-startup = true
-check-further-callbacks = true
-run = 'layout floating'
+# [[on-window-detected]]
+# if.app-id = 'com.1password.1password'
+# if.during-aerospace-startup = true
+# check-further-callbacks = true
+# run = 'layout floating'
 
 [[on-window-detected]]
 if.window-title-regex-substring = "Karabiner"
