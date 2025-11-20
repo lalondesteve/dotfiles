@@ -1,0 +1,20 @@
+[
+  {
+    "prefix": "iferr",
+    "body": [
+      "if err != nil {\n${1:return error}\n}$0"
+    ]
+  },
+  {
+    "prefix": "fmain",
+    "body": [
+      "func main(){\n$1\n}$0"
+    ]
+  },
+  {
+    "prefix": "ifnil",
+    "body": [
+      "if $1 != nil {\n$2\n}$0"
+    ]
+  }
+]
