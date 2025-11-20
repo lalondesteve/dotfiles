@@ -344,7 +344,7 @@
                         ]
                     },
                     {
-                        "description": "Fix Blackwidow and corne when using CSA layout",
+                        "description": "Fix Blackwidow when using CSA layout",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -354,11 +354,6 @@
                                                 "is_keyboard": true,
                                                 "product_id": 590,
                                                 "vendor_id": 5426
-                                            },
-                                            {
-                                                "is_keyboard": true,
-                                                "product_id": 4,
-                                                "vendor_id": 18003
                                             }
                                         ],
                                         "type": "device_if"
