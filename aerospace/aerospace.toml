@@ -27,6 +27,7 @@ A = 'secondary'
 S = 'secondary'
 D = 'secondary'
 F = 'secondary'
+G = 'secondary'
 
 [mode.main.binding]
 # No need for hiding when using AeroSpace
