@@ -15,8 +15,8 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 automatically-unhide-macos-hidden-apps = true
 
 [gaps]
-inner.horizontal = 2
-inner.vertical = 2
+inner.horizontal = 4
+inner.vertical = 4
 outer.left = 2
 outer.bottom = 2
 outer.top = 2

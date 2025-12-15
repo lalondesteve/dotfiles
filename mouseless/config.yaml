@@ -344,7 +344,7 @@ keymaps:
     toggle app enabled: null
     toggle continuous mode: null
     toggle continuous mode until closed: '1'
-    toggle free mode: OptionLeft tap
+    toggle free mode: OptionLeft double tap
     toggle overlay: null
     toggle overlay lock: null
     undo last key: Backspace
@@ -432,9 +432,9 @@ style_configs:
   - 0.5
   subgrid_text_rgba:
   - 0.10980392156862745
-  - 1
+  - 1.0
   - 0.00392156862745098
-  - 1
+  - 1.0
   text_rgba:
   - 0.1803921568627451
   - 1.0
