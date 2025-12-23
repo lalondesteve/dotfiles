@@ -16,6 +16,7 @@ export SECONDARYCOLOR=ORANGE
 
 waybar :
 # @define-color cyan #009fff;
+# @define-color blue #0070ff;
 # @define-color bg #1a1b25;
 # @define-color bg-tr rgba(26, 27, 37, 0.55);
 # @define-color alt-bg #0f0f16;

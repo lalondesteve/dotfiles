@@ -2,7 +2,7 @@
     text-color:   #c8d3f5ff;
     bg-color:     #1d202b55;
     // bg-color: #00000055;
-    main-color:   #009fff;
+    main-color:   #0070ff;
     border-width: 4px;
     bg-alt-color: #1d202bff;  
     alt-color:    #40455255;

@@ -19,7 +19,7 @@ map("v", "<tab>", ">gv")
 map("v", "<s-tab>", "<gv")
 
 -- move and zoom
-map("n", "<c-m>", "<c-m>zz", { desc = "Page Down" })
+map("n", "<c-m>", "<c-d>zz", { desc = "Page Down" })
 map("n", "<c-u>", "<c-u>zz", { desc = "Page Up" })
 -- move lines
 map({ "n" }, "<c-j>", ":m +1<cr>", { desc = "Move Line Down" })
