@@ -1,0 +1,48 @@
+{
+ :devices {:corne [{:vendor_id 18003 :product_id 4}]}
+
+ :froms { 
+         :ù {:key :##grave_accent_and_tilde }
+         :é {:key :##slash}
+         :nub {:key :##non_us_backslash}
+         }
+
+ :tos { 
+         :ù {:key :grave_accent_and_tilde }
+         :é {:key :slash}
+         :nub {:key :non_us_backslash}
+         }
+
+ :main [ 
+
+        ; easy underscore
+        { :des "Shift-Space to underscore" 
+          :rules [ :!corne 
+                  [ :!S#Pspacebar :!Rhyphen]
+                 ]
+        }
+        ; caps escape hyper
+        { :des "CapsHyperEscape" 
+         :rules [ :!corne
+                [ :##caps_lock :!QWEright_shift nil {:alone :escape }]
+                [ :##escape :caps_lock]]
+         }
+        ; hyper layer
+        { :des "Hyper-hjkl" :rules [ :!corne 
+                                    [ :!QWERh :left_arrow ]
+                                    [ :!QWERj :down_arrow ]
+                                    [ :!QWERk :up_arrow ]
+                                    [ :!QWERl :right_arrow ]
+                             ]
+        }
+        ; meh
+        { :des "MehOrTab" :rules [:!corne [:tab :!WEright_shift nil {:alone :tab}] ] }
+        ; alternative control keys
+        { :des "alternative ctrl keys" 
+          :rules [ :!corne 
+               [ :ù :right_control nil {:alone :ù}]
+               [ :é :right_control nil {:alone :é}]
+          ]
+        }
+  ]
+}
