@@ -1,8 +1,10 @@
-@define-color cyan #0070ff;
 @define-color main @cyan;
-@define-color bg #1a1b25;
-@define-color bg-tr rgba(26, 27, 37, 0.55);
-@define-color alt-bg #0f0f16;
+@define-color cyan #0080ff;
+/* @define-color bg #1a1b25; */
+@define-color bg #1c1b2a;
+/* @define-color alt-bg #0f0f16; */
+@define-color alt-bg #0A0A0F;
+@define-color bg-tr rgba(28, 27, 42, 0.66);
 @define-color white #ebf7ff;
 
 
@@ -66,7 +68,7 @@ window#waybar {
 }
 
 .modules-center{
-  padding: 0 0 0 5px;
+  padding-top: 6px;
 }
 
 
