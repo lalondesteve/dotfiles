@@ -1,5 +1,8 @@
 {
- :devices {:corne [{:vendor_id 18003 :product_id 4}]}
+ :devices {:corne [{:vendor_id 18003 :product_id 4}]
+           :mouse [{:is_pointing_device true}]
+           :applekb [{:is_built_in_keyboard true}]}
+ ; will need to add magic kb also
 
  :froms { 
          :ù {:key :##grave_accent_and_tilde }
@@ -44,5 +47,10 @@
                [ :é :right_control nil {:alone :é}]
           ]
         }
+        {:des "Swap ù and backslash on non apple devices"
+         :rules [:!applekb
+                 [:ù :nub]
+                 [:nub :ù]
+                 ]}
   ]
 }
