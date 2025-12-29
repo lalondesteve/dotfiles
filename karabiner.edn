@@ -52,5 +52,15 @@
                  [:ù :nub]
                  [:nub :ù]
                  ]}
+        {:des "Corne CopyPasteUndoCut"
+         :rules [:corne
+                 [ :##copy  :!Cc]
+                 [:##paste :!Cv]
+                 [:##undo :!Cz]
+                 [:##cut :!Cx]
+                 [:##select :!Ca]
+                 [:##again :!QRz]
+                 ]
+        }
   ]
 }

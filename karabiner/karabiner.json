@@ -1053,6 +1053,123 @@
           } ],
           "type" : "basic"
         } ]
+      }, {
+        "description" : "Corne CopyPasteUndoCut",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "copy",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "c",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 18003,
+              "product_id" : 4
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "paste",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "v",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 18003,
+              "product_id" : 4
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "undo",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "z",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 18003,
+              "product_id" : 4
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "cut",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "x",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 18003,
+              "product_id" : 4
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "select",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "a",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 18003,
+              "product_id" : 4
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "again",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "z",
+            "modifiers" : [ "right_command", "right_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 18003,
+              "product_id" : 4
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        } ]
       } ]
     },
     "devices" : [ {
