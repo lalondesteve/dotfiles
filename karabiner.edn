@@ -54,7 +54,7 @@
                  ]}
         {:des "Corne CopyPasteUndoCut"
          :rules [:corne
-                 [ :##copy  :!Cc]
+                 [:##copy  :!Cc]
                  [:##paste :!Cv]
                  [:##undo :!Cz]
                  [:##cut :!Cx]
