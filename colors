@@ -21,3 +21,7 @@ waybar :
 # @define-color bg-tr rgba(26, 27, 37, 0.55);
 # @define-color alt-bg #0f0f16;
 # @define-color white #ebf7ff;
+
+# bash ps1
+# PS1='\[\033[38;2;0;144;255m\]\u\[\033[38;2;255;188;20m\]@\[\033[38;2;211;90;218m\]\h\[\033[0m\]:\[\033[38;2;64;214;155m\]\w\[\033[0m\]$ '
+#
