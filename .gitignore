@@ -27,3 +27,5 @@ Trust*
 dconf/*
 *.mdb*
 uv/
+
+op/*
