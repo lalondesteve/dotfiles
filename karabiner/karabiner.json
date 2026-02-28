@@ -875,12 +875,12 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "Hyper-hjkl",
+        "description" : "alt-hjkl",
         "manipulators" : [ {
           "from" : {
             "key_code" : "h",
             "modifiers" : {
-              "mandatory" : [ "right_command", "right_control", "right_option", "right_shift" ]
+              "mandatory" : [ "left_option" ]
             }
           },
           "to" : [ {
@@ -898,7 +898,7 @@
           "from" : {
             "key_code" : "j",
             "modifiers" : {
-              "mandatory" : [ "right_command", "right_control", "right_option", "right_shift" ]
+              "mandatory" : [ "left_option" ]
             }
           },
           "to" : [ {
@@ -916,7 +916,7 @@
           "from" : {
             "key_code" : "k",
             "modifiers" : {
-              "mandatory" : [ "right_command", "right_control", "right_option", "right_shift" ]
+              "mandatory" : [ "left_option" ]
             }
           },
           "to" : [ {
@@ -934,7 +934,7 @@
           "from" : {
             "key_code" : "l",
             "modifiers" : {
-              "mandatory" : [ "right_command", "right_control", "right_option", "right_shift" ]
+              "mandatory" : [ "left_option" ]
             }
           },
           "to" : [ {

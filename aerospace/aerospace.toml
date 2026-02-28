@@ -6,7 +6,7 @@ start-at-login = true
 # ]
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
-enable-normalization-flatten-containers = true
+enable-normalization-flatten-containers = false
 enable-normalization-opposite-orientation-for-nested-containers =true 
 
 default-root-container-layout = 'tiles'
@@ -41,10 +41,10 @@ cmd-alt-h = [] # Disable "hide others"
 alt-shift-ctrl-t = 'layout h_tiles v_tiles'
 
 # focus
-alt-h = 'focus left'
-alt-j = 'focus down'
-alt-k = 'focus up'
-alt-l = 'focus right'
+alt-shift-cmd-ctrl-h = 'focus left'
+alt-shift-cmd-ctrl-j = 'focus down'
+alt-shift-cmd-ctrl-k = 'focus up'
+alt-shift-cmd-ctrl-l = 'focus right'
 
 # move
 alt-shift-h = 'move left'
@@ -119,11 +119,11 @@ run = 'layout floating'
 if.app-id = 'org.pqrs.Karabiner-EventViewer'
 run = 'layout floating'
 
-# [[on-window-detected]]
-# if.app-id = 'com.1password.1password'
-# if.during-aerospace-startup = true
-# check-further-callbacks = true
-# run = 'layout floating'
+[[on-window-detected]]
+if.app-id = 'com.1password.1password'
+if.during-aerospace-startup = true
+check-further-callbacks = true
+run = 'layout floating'
 
 [[on-window-detected]]
 if.window-title-regex-substring = "Karabiner"
