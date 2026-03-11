@@ -18,6 +18,8 @@ gtk-tabs-location=bottom
 gtk-wide-tabs=false
 
 mouse-hide-while-typing = true
-term = xterm-ghostty
+# term = xterm-ghostty
 quit-after-last-window-closed = true
 
+shell-integration-features = ssh-terminfo
+shell-integration-features = ssh-env
