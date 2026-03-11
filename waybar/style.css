@@ -1,5 +1,5 @@
-@define-color main @cyan;
 @define-color cyan #0080ff;
+@define-color main @cyan;
 /* @define-color bg #1a1b25; */
 @define-color bg #1c1b2a;
 /* @define-color alt-bg #0f0f16; */
@@ -73,7 +73,7 @@ window#waybar {
 
 
 widget>* {
-  padding-top: 4px;
+  padding-top: 0px;
 }
 
 #workspaces {
@@ -115,8 +115,7 @@ widget>* {
 }
 
 #pulseaudio {
-  padding: 0;
-  margin-left: 4px;
+  margin-left: 12px;
 }
 
 #pulseaudio,
@@ -124,9 +123,11 @@ widget>* {
 #cpu,
 #custom-updates,
 #tray,
-#disk {
-  padding-left: 10px;
-  padding-right: 10px;
+#disk,
+#custom-gpu,
+#custom-vram {
+  padding: 0;
+  margin-right: 8px;
 }
 
 #custom-right-arrow-dark,

@@ -16,6 +16,8 @@
     "memory",
     "cpu",
     "disk",
+    "custom/gpu",
+    "custom/vram",
     "custom/updates",
     "tray"
   ],
@@ -53,7 +55,7 @@
     ]
   },
   "pulseaudio": {
-    "format": "{icon}   {volume:2}%",
+    "format": "{icon} {volume:3}%",
     "format-bluetooth": "{icon}  {volume}%",
     "format-muted": "MUTE",
     "format-icons": {
@@ -74,11 +76,25 @@
   },
   "cpu": {
     "interval": 5,
-    "format": "CPU {usage:2}%"
+    "format": "CPU {usage}%"
+  },
+  "custom/gpu": {
+    "interval": 2,
+    "format": "GPU {}%",
+    "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits | xargs",
+    "exec-if": "nvidia-smi > /dev/null 2>&1",
+    "return-type": "text"
+  },
+  "custom/vram": {
+    "interval": 2,
+    "format": "VRAM {}%",
+    "exec": "nvidia-smi --query-gpu=memory.used,memory.total --format=csv,noheader | sed 's/ MiB//g' | awk -F', ' '{printf "%.0f", ($1/$2)*100}'",
+    "exec-if": "nvidia-smi > /dev/null 2>&1",
+    "return-type": "text"
   },
   "disk": {
     "interval": 5,
-    "format": "Disk {percentage_used:2}%",
+    "format": "Disk {percentage_used}%",
     "path": "/"
   },
   "tray": {
