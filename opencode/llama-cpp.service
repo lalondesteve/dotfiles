@@ -1,0 +1,12 @@
+[Unit]
+Description=Llama.cpp Server
+
+[Service]
+Type=simple
+WorkingDirectory=%h/.llama/llama.cpp/cuda-12.8
+ExecStart=/bin/bash -c "export LD_LIBRARY_PATH=%h/.llama/llama.cpp/cuda-12.8:/usr/local/lib/ollama/cuda_v12 && exec %h/.llama/llama.cpp/cuda-12.8/llama-server -m %h/.llama/models/Qwen3-14B-Q4_K_M.gguf --host localhost --port 8080 -c 32768 -ngl 99"
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target
