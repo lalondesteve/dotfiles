@@ -88,7 +88,7 @@
   "custom/vram": {
     "interval": 2,
     "format": "VRAM {}%",
-    "exec": "nvidia-smi --query-gpu=memory.used,memory.total --format=csv,noheader | sed 's/ MiB//g' | awk -F', ' '{printf "%.0f", ($1/$2)*100}'",
+    "exec": "nvidia-smi --query-gpu=memory.used,memory.total --format=csv,noheader | sed 's/ MiB//g' | awk -F', ' '{printf \"%.0f\", ($1/$2)*100}'",
     "exec-if": "nvidia-smi > /dev/null 2>&1",
     "return-type": "text"
   },
