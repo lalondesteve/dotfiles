@@ -50,3 +50,7 @@ command -v brew >/dev/null && {
   [[ -s "$NVM_PREFIX/etc/bash_completion.d/nvm" ]] && \. "$NVM_PREFIX/etc/bash_completion.d/nvm"
 }
 
+alias opa='opencode attach ai.home.lals.ca:4096'
+alias opaa='opencode attach ai.home.lals.ca:4444'
+alias opgo='opencode attach gobot1.home.lals.ca:4096'
+alias opgoo='opencode attach gobot1.home.lals.ca:4444'

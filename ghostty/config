@@ -23,3 +23,5 @@ quit-after-last-window-closed = true
 
 shell-integration-features = ssh-terminfo
 shell-integration-features = ssh-env
+macos-option-as-alt = left
+keybind = ctrl+alt+shift+b=text:\x02
