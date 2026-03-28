@@ -1,6 +1,7 @@
 .DS_STORE*
 configstore/*
-karabiner/automatic_backups/
+karabiner/automatic_backups/*
+karabiner/karbiner.json
 filezilla/*
 yarn/*
 wireshark/*

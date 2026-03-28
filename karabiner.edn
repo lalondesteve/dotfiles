@@ -25,14 +25,14 @@
 ; caps escape hyper
         {:des "CapsHyperEscape"
          :rules [:!corne
-                 [:##caps_lock :!QWEright_shift nil {:alone :escape}]
+                 [:##caps_lock :!CTOleft_shift nil {:alone :escape}]
                  [:##escape :caps_lock]]}
         ; vim movement layer
-        {:des "alt-hjkl" :rules [:!corne
-                                 [:!Oh :left_arrow]
-                                 [:!Oj :down_arrow]
-                                 [:!Ok :up_arrow]
-                                 [:!Ol :right_arrow]]}
+        {:des "Vim-Arrows" :rules [:!corne
+                                   [:!!##h :left_arrow]
+                                   [:!!##j :down_arrow]
+                                   [:!!##k :up_arrow]
+                                   [:!!##l :right_arrow]]}
 
 ; meh
         {:des "MehOrTab" :rules [:!corne [:tab :!WEright_shift nil {:alone :tab}]]}
