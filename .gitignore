@@ -30,3 +30,6 @@ dconf/*
 uv/
 
 op/*
+
+.clj-kondo
+.lsp
