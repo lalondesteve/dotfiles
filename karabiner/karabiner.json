@@ -1,0 +1,387 @@
+{
+  "profiles" : [ {
+    "name" : "Default",
+    "selected" : true,
+    "virtual_hid_keyboard" : {
+      "keyboard_type_v2" : "ansi"
+    },
+    "complex_modifications" : {
+      "parameters" : {
+        "basic.simultaneous_threshold_milliseconds" : 50,
+        "basic.to_delayed_action_delay_milliseconds" : 500,
+        "basic.to_if_alone_timeout_milliseconds" : 1000,
+        "basic.to_if_held_down_threshold_milliseconds" : 500
+      },
+      "rules" : [ {
+        "description" : "Shift-Space to underscore",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "spacebar",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ],
+              "optional" : [ "caps_lock" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "hyphen",
+            "modifiers" : [ "right_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 18003,
+              "product_id" : 4
+            } ],
+            "type" : "device_unless"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "CapsHyperEscape",
+        "manipulators" : [ {
+          "to_if_alone" : [ {
+            "key_code" : "escape"
+          } ],
+          "from" : {
+            "key_code" : "caps_lock",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "left_shift",
+            "modifiers" : [ "left_command", "left_control", "left_option" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 18003,
+              "product_id" : 4
+            } ],
+            "type" : "device_unless"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "escape",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "caps_lock"
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 18003,
+              "product_id" : 4
+            } ],
+            "type" : "device_unless"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "Vim-Arrows",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "h",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option", "left_shift" ],
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "left_arrow"
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 18003,
+              "product_id" : 4
+            } ],
+            "type" : "device_unless"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "j",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option", "left_shift" ],
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "down_arrow"
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 18003,
+              "product_id" : 4
+            } ],
+            "type" : "device_unless"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "k",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option", "left_shift" ],
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "up_arrow"
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 18003,
+              "product_id" : 4
+            } ],
+            "type" : "device_unless"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "l",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option", "left_shift" ],
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "right_arrow"
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 18003,
+              "product_id" : 4
+            } ],
+            "type" : "device_unless"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "MehOrTab",
+        "manipulators" : [ {
+          "to_if_alone" : [ {
+            "key_code" : "tab"
+          } ],
+          "from" : {
+            "key_code" : "tab",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "left_shift",
+            "modifiers" : [ "left_control", "left_option" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 18003,
+              "product_id" : 4
+            } ],
+            "type" : "device_unless"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "alternative ctrl keys",
+        "manipulators" : [ {
+          "to_if_alone" : [ {
+            "key_code" : "grave_accent_and_tilde"
+          } ],
+          "from" : {
+            "key_code" : "grave_accent_and_tilde",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "right_control"
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 18003,
+              "product_id" : 4
+            } ],
+            "type" : "device_unless"
+          } ],
+          "type" : "basic"
+        }, {
+          "to_if_alone" : [ {
+            "key_code" : "slash"
+          } ],
+          "from" : {
+            "key_code" : "slash",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "right_control"
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 18003,
+              "product_id" : 4
+            } ],
+            "type" : "device_unless"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "Swap ù and backslash on non apple devices",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "grave_accent_and_tilde",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "non_us_backslash"
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "is_built_in_keyboard" : true
+            } ],
+            "type" : "device_unless"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "non_us_backslash",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "grave_accent_and_tilde"
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "is_built_in_keyboard" : true
+            } ],
+            "type" : "device_unless"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "Corne CopyPasteUndoCut",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "copy",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "c",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 18003,
+              "product_id" : 4
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "paste",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "v",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 18003,
+              "product_id" : 4
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "undo",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "z",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 18003,
+              "product_id" : 4
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "cut",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "x",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 18003,
+              "product_id" : 4
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "select",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "a",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 18003,
+              "product_id" : 4
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "again",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "z",
+            "modifiers" : [ "right_command", "right_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 18003,
+              "product_id" : 4
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        } ]
+      } ]
+    }
+  } ]
+}

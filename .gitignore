@@ -1,7 +1,6 @@
 .*
 configstore/*
 karabiner/automatic_backups/*
-karabiner/karbiner.json
 filezilla/*
 yarn/*
 wireshark/*

@@ -35,7 +35,8 @@
                                    [:!!##l :right_arrow]]}
 
 ; meh
-        {:des "MehOrTab" :rules [:!corne [:tab :!WEright_shift nil {:alone :tab}]]}
+        {:des "MehOrTab" :rules [:!corne
+                                 [:##tab :!TOleft_shift nil {:alone :tab}]]}
         ; alternative control keys
         {:des "alternative ctrl keys"
          :rules [:!corne
