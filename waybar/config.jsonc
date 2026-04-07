@@ -39,7 +39,7 @@
   },
   "clock#2": {
     "format": "{:%H:%M}",
-    "tooltip": false,
+    "tooltip": false
   },
   "clock#3": {
     "format": "{:%A}",
@@ -55,8 +55,8 @@
     ]
   },
   "pulseaudio": {
-    "format": "{icon} {volume:3}%",
-    "format-bluetooth": "{icon}  {volume}%",
+    "format": "{icon}   {volume:3}%",
+    "format-bluetooth": "{icon}   {volume}%",
     "format-muted": "MUTE",
     "format-icons": {
       "headphones": "",

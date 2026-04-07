@@ -1,12 +1,12 @@
-@define-color cyan #0080ff;
+@define-color cyan #0090ff;
 @define-color main @cyan;
 /* @define-color bg #1a1b25; */
-@define-color bg #1c1b2a;
+@define-color bg #1a1b25;
 /* @define-color alt-bg #0f0f16; */
 @define-color alt-bg #0A0A0F;
 @define-color bg-tr rgba(28, 27, 42, 0.66);
 @define-color white #ebf7ff;
-
+@define-color orange #ffb114;
 
 * {
   font-size: 18px;
@@ -19,14 +19,14 @@
   color: @white;
 }
 
-window#waybar>* {
-  margin: 4px 12px;
-}
-
 window#waybar {
   background-color: @bg-tr;
   border: none;
   box-shadow: none;
+}
+
+window#waybar>* {
+  margin: 4px 12px;
 }
 
 .modules-left>widget:last-child>*,
@@ -148,4 +148,4 @@ widget>* {
 #custom-left-arrow-dark {
   color: @alt-bg;
   background: @bg-tr;
-}
+  }
