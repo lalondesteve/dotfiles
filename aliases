@@ -7,6 +7,16 @@
 command -v pacman >/dev/null && spac() { sudo pacman -Syu --noconfirm "$@"; }
 command -v yay >/dev/null && syay() { yay -Syu --noconfirm "$@"; }
 
+# Use a compatible TERM when SSHing to remote devices that don't know xterm-ghostty
+# Skip override for Windows hosts which handle TERM differently
+ssh() {
+    local host="$1"
+    case "$host" in
+        t1) command ssh "$@" ;;
+        *) TERM=xterm-256color command ssh "$@" ;;
+    esac
+}
+
 # Lazy Loading Thefuck
 fuck() {
     unset -f fuck
@@ -16,31 +26,24 @@ fuck() {
 # send all __pycache__ folders to /tmp
 export PYTHONPYCACHEPREFIX=/tmp
 
-eval "$(starship init $SHELL)"
+eval "$(starship init zsh)"
 
-_build_path() {
-    local paths=(
-        ~/.local/bin
-        "$(command -v go >/dev/null && go env GOPATH)/bin"
-        "$(command -v yarn >/dev/null && yarn global bin)"
-        "$PATH"
-    )
-    printf "%s" "$(IFS=:; echo "${paths[*]}")"
-}
-export PATH=$(_build_path)
+command -v go >/dev/null && export PATH="$(go env GOPATH)/bin:$PATH"
+command -v yarn >/dev/null && export PATH="$(yarn global bin):$PATH"
 
 alias cd..='cd ..'
 alias cd....='cd ../../..'
 alias cd...='cd ../..'
 alias ve='source .venv/bin/activate'
 alias py='uv run python'
+alias serve='uv run python -m http.server'
 alias clera='clear'
 alias uvim='uv run nvim'
 alias v='nvim'
 alias sv='sudo nvim'
 alias u="uv run"
 alias upg="uv lock --upgrade"
-alias src="source $(echo '~/.*shrc')"
+src() { source "$HOME/.${SHELL##*/}rc"; }
 
 command -v delta >/dev/null && d() { delta -s --dark --hyperlinks "$@"; }
 
@@ -55,6 +58,14 @@ alias opaa='opencode attach ai.home.lals.ca:4444'
 alias opgo='opencode attach gobot1.home.lals.ca:4096'
 alias opgoo='opencode attach gobot1.home.lals.ca:4444'
 
-rmux () {
-    ssh -t $1 " tmux  -u a || tmux -u new"
-  }
+opc() {
+    opencode attach $1:4096
+}
+
+opcc() {
+    opencode attach $1:4444
+}
+
+rmux() {
+    ssh -t "$1" "tmux -u a || tmux -u new"
+}

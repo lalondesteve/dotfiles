@@ -6,6 +6,7 @@
 ;; :!!1 left_command + left_control + left_option + left_shift + 1
 {:devices {:corne [{:vendor_id 18003 :product_id 4}]
            :mouse [{:is_pointing_device true}]
+           :trackpad [{:is_built_in_pointing_device true}]
            :applekb [{:is_built_in_keyboard true}]}
  ; will need to add magic kb also
 
@@ -38,15 +39,16 @@
         {:des "MehOrTab" :rules [:!corne
                                  [:##tab :!TOleft_shift nil {:alone :tab}]]}
         ; alternative control keys
-        {:des "alternative ctrl keys"
-         :rules [:!corne
-                 [:ù :right_control nil {:alone :ù}]
-                 [:é :right_control nil {:alone :é}]]}
+        ; {:des "alternative ctrl keys"
+        ;  :rules [:!corne
+        ;          [:ù :right_control nil {:alone :ù}]
+        ;          [:é :right_control nil {:alone :é}]]}
 
         {:des "Swap ù and backslash on non apple devices"
          :rules [:!applekb
                  [:ù :nub]
                  [:nub :ù]]}
+
         {:des "Corne CopyPasteUndoCut"
          :rules [:corne
                  [:##copy  :!Cc]
