@@ -1,7 +1,8 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "model": "{env:OPENCODE_LAST_MODEL}",
   "provider": {
-    "opencode":{
+    "opencode": {
       "whitelist": [
         "big-pickle",
         "claude-opus-4-6",
@@ -14,13 +15,37 @@
         "kimi-k2.5-free",
         "minimax-m2.5-free",
         "qwen3-coder"
-      ] 
+      ]
     },
-    "openai":{
+    "openai": {
       "whitelist": [
         "gpt-5.4",
         "gpt-5.5"
-      ] 
+      ]
+    },
+    "llama.cpp": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Llama.cpp (local)",
+      "options": {
+        "baseURL": "http://arch-t1:8080/v1"
+      },
+      "models": {
+        "Qwen3-14B-Q4_K_M.gguf": {
+          "name": "qwen",
+          "tool_call": true
+        },
+        "Qwen3-Coder-Next-UD-Q3_K_M.gguf": {
+          "name": "qwen3-coder",
+          "tool_call": true
+        },
+        "gemma-4-26B-A4B-it-Q4_K_M.gguf": {
+          "name": "gemma"
+        },
+        "Devstral-Small-2-24B-Instruct-2512-Q4_K_M.gguf": {
+          "name": "devstral",
+          "tool_call": true
+        }
+      }
     }
   }
 }

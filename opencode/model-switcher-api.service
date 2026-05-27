@@ -1,0 +1,14 @@
+[Unit]
+Description=LLM Model Switcher API
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/.llama/api
+ExecStart=%h/.llama/api/.venv/bin/uvicorn main:app --host 0.0.0.0 --port 8888
+Restart=always
+RestartSec=10
+Environment=PATH=%h/.local/bin:%h/.llama/api/.venv/bin:/usr/bin
+
+[Install]
+WantedBy=default.target
