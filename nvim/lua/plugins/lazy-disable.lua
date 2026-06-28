@@ -22,6 +22,7 @@ return {
       -- quickfile = { enabled = true },
     },
     keys = {
+      { "<leader>n", false },
       { "<leader>e", false },
       { "<leader>E", false },
       { "<leader>fe", false },

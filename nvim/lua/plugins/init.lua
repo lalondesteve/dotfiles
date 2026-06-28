@@ -19,7 +19,7 @@ return {
     },
     keys = {
       {
-        "<leader>nn",
+        "<leader>n",
         "<cmd>Fidget history<cr>",
         desc = "Notification History",
       },

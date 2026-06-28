@@ -4,6 +4,7 @@
 [[ -d /opt/homebrew/opt/ccache/libexec ]] && export PATH=/opt/homebrew/opt/ccache/libexec:$PATH
 [[ -s /usr/share/nvm/init-nvm.sh ]] && \. /usr/share/nvm/init-nvm.sh
 [[ -d ~/.local/bin ]] && export PATH=~/.local/bin:$PATH
+[[ -d ~/.local/go/bin ]] && export PATH=~/.local/go/bin:$PATH
 command -v pacman >/dev/null && spac() { sudo pacman -Syu --noconfirm "$@"; }
 command -v yay >/dev/null && syay() { yay -Syu --noconfirm "$@"; }
 
@@ -26,7 +27,11 @@ fuck() {
 # send all __pycache__ folders to /tmp
 export PYTHONPYCACHEPREFIX=/tmp
 
-eval "$(starship init zsh)"
+if [ -n "$ZSH_VERSION" ]; then
+    eval "$(starship init zsh)"
+elif [ -n "$BASH_VERSION" ]; then
+    eval "$(starship init bash)"
+fi
 
 command -v go >/dev/null && export PATH="$(go env GOPATH)/bin:$PATH"
 command -v yarn >/dev/null && export PATH="$(yarn global bin):$PATH"
@@ -53,10 +58,11 @@ command -v brew >/dev/null && {
   [[ -s "$NVM_PREFIX/etc/bash_completion.d/nvm" ]] && \. "$NVM_PREFIX/etc/bash_completion.d/nvm"
 }
 
-alias opa='opencode attach ai.home.lals.ca:4096'
-alias opaa='opencode attach ai.home.lals.ca:4444'
-alias opgo='opencode attach gobot1.home.lals.ca:4096'
-alias opgoo='opencode attach gobot1.home.lals.ca:4444'
+opa(){ opencode attach "$@":4096; }
+opaa(){ opencode attach "$@":4444; }
+
+alias ops='opencode serve --hostname 0.0.0.0'
+alias opss='opencode server --hostname 0.0.0.0 --port 4444'
 
 opc() {
     opencode attach $1:4096

@@ -13,9 +13,12 @@
 [column]
   ui = auto
 [branch]
-  sort = -commiterdate
+  sort = -committerdate
 [tag]
   sort = -version:refname
 [rerere]
   enabled = true
   autoupdate = true
+[user]
+	name = Steve Lalonde
+	email = 16458080+lalondesteve@users.noreply.github.com
