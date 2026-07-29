@@ -15,7 +15,18 @@ description: Test-driven development. Use when the user wants to build features 
 
 See [tests.md](tests.md) for examples and [mocking.md](mocking.md) for mocking guidelines.
 
-## Anti-Pattern: Horizontal Slices
+## Seams -- where tests go
+
+A **seam** is the location where a module's public interface lives. Tests cross that seam through the interface, exercising and observing behaviour without reaching into implementation details. Test each behaviour at the highest practical seam that exposes it.
+
+- Prefer an existing seam to introducing a new one.
+- Do not expose an internal collaborator solely to make it testable.
+- If the correct seam is unclear or the current interface cannot express the behaviour, load the `codebase-design` skill before writing tests.
+- Ask the user to resolve a seam only when the request and repository context do not provide enough information to choose confidently.
+
+## Anti-Patterns
+
+### Horizontal slices
 
 **DO NOT write all tests first, then all implementation.** This is "horizontal slicing" - treating RED as "write all tests" and GREEN as "write all code."
 
@@ -40,6 +51,10 @@ RIGHT (vertical):
   ...
 ```
 
+### Tautological tests
+
+Do not compute the expected value with the same algorithm as the implementation. Such a test can agree with incorrect code by construction. Expected values must come from an independent source: a known literal, worked example, specification, or externally verified fixture.
+
 ## Workflow
 
 ### 1. Planning
@@ -49,14 +64,14 @@ When exploring the codebase, read `CONTEXT.md` (if it exists) so that test names
 Before writing code:
 
 - Identify the observable behavior being added or corrected.
-- Identify the highest practical public interface through which to test it.
+- Identify the highest practical public seam through which to test it.
 - Check existing tests and repository conventions for prior art.
 - List the behavior-focused tests needed, prioritizing critical paths.
 - Load the `codebase-design` skill when the interface or seam itself requires design work.
 
 Ask the user about the interface, behavior priorities, or test strategy only when the request and repository context do not provide enough information to proceed confidently. When requirements are clear, proceed directly with the first RED -> GREEN tracer bullet and state any reasonable assumptions in the final response.
 
-**You can't test everything.** Confirm with the user exactly which behaviors matter most. Focus testing effort on critical paths and complex logic, not every possible edge case.
+**You can't test everything.** Focus testing effort on the critical paths and complex logic identified by the request and repository context. Ask the user to prioritise only when those sources leave materially different testing choices.
 
 ### 2. Tracer Bullet
 

@@ -10,3 +10,5 @@ Run a grilling-style session: interview the user relentlessly about every aspect
 Use domain-modeling discipline throughout: challenge fuzzy terminology, align with `CONTEXT.md` vocabulary when present, and offer ADRs only for decisions that are hard to reverse, surprising without context, and the result of a real trade-off.
 
 If a question can be answered by exploring the codebase, explore the codebase instead. Update glossary or ADR files only when the user wants the repo docs changed or when the session has clearly produced a durable domain term or architectural decision worth recording.
+
+Stop when material ambiguities are resolved, terminology is consistent, important trade-offs are understood, and any remaining unknowns are explicit. Summarize the shared understanding. If the user wants it captured as a durable specification, offer the `to-spec` skill; do not create the spec automatically.
