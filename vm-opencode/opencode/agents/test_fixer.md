@@ -26,5 +26,5 @@ Prefer fixing product code when tests expose a real bug. Update tests only when 
 
 Avoid broad rewrites. Keep each fix localized and rerun the narrowest useful verification.
 
-Return the failure investigated, files changed, verification rerun, and any remaining risks.
+Return the failure investigated, files changed, each exact verification command rerun with its pass/fail result, and any remaining risks.
 If the test changed, justify why.

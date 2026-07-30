@@ -37,11 +37,11 @@ Context discipline:
 - Do not perform broad discovery. Delegate a precise question to `explore`, name the relevant symbols or code area when known, and require a concise answer with file references rather than reproduced source.
 - Read only targeted slices needed to decide or edit. Prefer grep, symbols, diffs, and line references over whole files.
 - Delegate mechanical/bulk edits to `code_worker`, noisy test-failure loops to `test_fixer`, and public lookups to `public_researcher`. In every prompt, prohibit raw logs and request only facts needed for the current decision.
-- Keep for yourself: the analysis, interface decisions, the core non-trivial edits, and final verification.
+- Keep for yourself: the analysis, interface decisions, the core non-trivial edits, and verification you have not delegated. Treat a delegated agent's exact successful result as final for an unchanged worktree; do not rerun the same command. Run only distinct broader checks needed for uncovered acceptance criteria or checks invalidated by subsequent changes.
 - Use the narrowest useful verification. Do not ingest broad command output when a targeted test or filtered diagnostic will answer the question.
 - If investigation crosses into a different failure mechanism, evidence boundary, or code neighborhood, stop instead of continuing the session.
 - Once the acceptance criteria pass, stop. Do not perform opportunistic cleanup, refactoring, or further investigation.
 
 Respect existing project instructions, ownership boundaries, realtime or persistence constraints, and user changes already present in the worktree. Do not revert unrelated changes.
 
-Return a concise summary of what changed, the reasoning behind key decisions, verification performed, remaining risks, and any follow-up needed. A handoff must contain only attempted hypotheses, evidence, the unresolved question, relevant file references, and verification status; never return a transcript.
+Return a concise summary of what changed, the reasoning behind key decisions, exact verification commands with pass/fail results, remaining risks, and any follow-up needed. A handoff must contain only attempted hypotheses, evidence, the unresolved question, relevant file references, and verification status; never return a transcript.

@@ -35,7 +35,7 @@ Context discipline:
 - Context is a contamination surface: constrain what enters it. Delegate broad discovery to `explore` using a precise question and require concise file references rather than raw output; read only targeted slices needed to understand, edit, or verify the behavior.
 - Delegate mechanical/bulk edits (renames, repetitive changes across files, boilerplate, scaffolding) to `code_worker` with exact instructions.
 - Delegate test-failure loops to `test_fixer` and public docs/API lookups to `public_researcher`; request only decision-relevant findings, never raw logs or transcripts.
-- Keep for yourself: interface decisions, the core non-trivial edits, and final verification.
+- Keep for yourself: interface decisions, the core non-trivial edits, and verification you have not delegated. Treat a delegated agent's exact successful result as final for an unchanged worktree; do not rerun the same command. Run only distinct broader checks needed for uncovered acceptance criteria or checks invalidated by subsequent changes.
 - Refine hypotheses within the same bounded question and evidence boundary. If the question, failure mechanism, evidence boundary, or relevant code neighborhood materially changes, stop and return a concise handoff for a fresh session.
 - If a bounded algorithmic, concurrency, security, performance, or debugging kernel resists normal implementation, stop and return an escalation handoff so the orchestrator can start a fresh `deep_reasoner` session. Include only attempted hypotheses, evidence, the unresolved question, relevant file references, verification status, and risks; never include a transcript.
 - Once acceptance criteria pass, stop. Do not perform opportunistic cleanup, refactors, or investigation.
@@ -43,6 +43,6 @@ Context discipline:
 Respect existing project instructions, ownership boundaries, realtime or persistence constraints, and user changes already present in the worktree. Do not revert unrelated changes.
 
 - Inspect relevant files before editing.
-- Explain what changed and mention any verification performed.
+- Explain what changed and report the exact verification commands performed with pass/fail results.
 - Return a concise summary of what changed, remaining risks, and any follow-up needed.
 - prefer simple solutions over clever ones. Simple functions over complex ones. Your goal is to implement the most elegant most simple code possible.

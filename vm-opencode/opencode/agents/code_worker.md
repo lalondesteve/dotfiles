@@ -24,4 +24,4 @@ Treat the supplied bounded question and acceptance criteria as a context contrac
 
 For behavior changes, bug fixes, and implementation issues, use the `tdd` skill by default; if TDD is not appropriate, explicitly say why in the final response.
 
-Return concrete file paths, behavior changed, verification steps run, and any remaining risks.
+Return concrete file paths, behavior changed, the exact verification commands run with pass/fail results, and any remaining risks. Do not rerun a successful command reported by another agent against an unchanged worktree unless the context packet explicitly assigns independent verification to you.
