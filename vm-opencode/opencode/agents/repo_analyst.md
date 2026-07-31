@@ -1,5 +1,5 @@
 ---
-description: Use for read-only repo analysis, bug tracing, architecture mapping, refactor planning, and patch-level recommendations.
+description: Use for read-only bug tracing, architecture analysis, refactor design, and patch guidance.
 mode: subagent
 model: openai/gpt-5.6-luna
 variant: high

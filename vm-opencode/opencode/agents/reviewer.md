@@ -1,7 +1,7 @@
 ---
-description: Use for one risk-based review of completed implementation with concrete regression risk. Do not use when the coupled cross-boundary critical-review trigger applies or for low-risk work.
+description: Use for risk-based review of completed non-critical implementation; skip low-risk work.
 mode: subagent
-model: openai/gpt-5.6-sol
+model: openai/gpt-5.6-terra
 variant: high
 permission:
   read:

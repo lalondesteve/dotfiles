@@ -1,7 +1,8 @@
 ---
-description: Use for public web research, external docs, package/API analysis, release notes, public repository examples, and coding-context research that does not require private repo access.
+description: Use for public docs, APIs, packages, releases, and examples without private repo access.
 mode: subagent
-model: openai/gpt-5.4-mini-fast
+model: openai/gpt-5.6-luna
+variant: medium
 permission:
   read: deny
   glob: deny

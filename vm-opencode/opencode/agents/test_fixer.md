@@ -1,8 +1,8 @@
 ---
-description: Use for fixing failing tests, diagnosing test output, updating targeted tests, and making localized implementation fixes needed for verification.
+description: Use for localized diagnosis and repair of failing tests or verification.
 mode: subagent
-model: openai/gpt-5.6-terra 
-variant: high
+model: openai/gpt-5.6-luna
+variant: medium
 permission:
   bash: allow
   external_directory: deny
