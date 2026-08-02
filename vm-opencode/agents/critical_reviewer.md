@@ -1,7 +1,7 @@
 ---
 description: Use only for cross-boundary changes whose correctness depends on integration, not merely size, stakes, or one cohesive change; replaces routine review.
 mode: subagent
-model: opencode/claude-fable-5
+model: openai/gpt-5.6-sol
 variant: high
 permission:
   read:
