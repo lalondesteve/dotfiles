@@ -6,6 +6,9 @@
       "variant": "low"
     }
   },
+  "plugin": [
+    "./plugins/granforge-polyscope-vision.ts"
+  ],
   "mcp": {
     "playwright": {
       "type": "local",
@@ -16,6 +19,8 @@
         "--browser",
         "chromium",
         "--caps=vision",
+        "--image-responses",
+        "allow",
         "--isolated",
         "--viewport-size=1280x720"
       ],
