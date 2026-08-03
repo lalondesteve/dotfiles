@@ -1,7 +1,7 @@
 ---
 description: Use for public docs, APIs, packages, releases, and examples without private repo access.
 mode: subagent
-model: openai/gpt-5.6-luna
+model: opencode-go/gpt-5.6-luna
 variant: medium
 permission:
   read: deny

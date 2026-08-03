@@ -1,7 +1,7 @@
 ---
 description: Use only for mechanical edits, precisely specified boilerplate, and trivial isolated changes.
 mode: subagent
-model: openai/gpt-5.6-luna
+model: opencode-go/gpt-5.6-luna
 variant: medium
 permission:
   "*": allow

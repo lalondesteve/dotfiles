@@ -7,7 +7,7 @@ permission:
   external_directory: deny
   question: allow
   plan_enter: allow
-  plan_exit: deny
+  plan_exit: allow
   read:
     "*": allow
     "*.env": ask

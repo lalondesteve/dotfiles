@@ -1,8 +1,8 @@
 ---
 description: Use for a distinct unexpected verification failure after the implementation owner has attempted diagnosis.
 mode: subagent
-model: openai/gpt-5.6-luna
-variant: medium
+model: opencode-go/glm-5.2
+variant: high
 permission:
   bash:
     "*": allow

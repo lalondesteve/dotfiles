@@ -1,8 +1,8 @@
 ---
 description: Use for UI/UX implementation and user-facing design where visual judgment matters.
 mode: subagent
-model: opencode/claude-opus-4-8
-variant: high
+model: opencode-go/kimi-k3
+variant: max
 permission:
   doom_loop: ask
   question: allow

@@ -1,8 +1,8 @@
 ---
 description: Use for risk-based review of completed non-critical implementation; skip low-risk work.
 mode: subagent
-model: openai/gpt-5.6-terra
-variant: high
+model: opencode-go/glm-5.2
+variant: max
 permission:
   read:
     "*": allow
