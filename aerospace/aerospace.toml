@@ -2,7 +2,22 @@ config-version = 2
 start-at-login = true
 
 # Keep the workspaces that were implicitly persistent in config version 1.
-persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "S", "D", "F", "G"]
+persistent-workspaces = [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "A",
+  "S",
+  "D",
+  "F",
+  "G",
+]
 
 # using homebrew to bootstrap borders
 # after-startup-command = [
@@ -11,11 +26,14 @@ persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "S", 
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
-enable-normalization-opposite-orientation-for-nested-containers =true 
+enable-normalization-opposite-orientation-for-nested-containers = true
 
 default-root-container-layout = 'tiles'
 default-root-container-orientation = 'auto'
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+on-focus-changed = [
+  'exec-and-forget /Users/lals-mbp/.local/bin/aerospace-app-mode.sh',
+]
 automatically-unhide-macos-hidden-apps = true
 
 [gaps]
@@ -45,6 +63,7 @@ cmd-alt-h = [] # Disable "hide others"
 alt-shift-ctrl-t = 'layout h_tiles v_tiles'
 
 # focus
+# these keybindings interfere with qlab.... 
 cmd-h = 'focus left'
 cmd-j = 'focus down'
 cmd-k = 'focus up'
@@ -106,7 +125,7 @@ alt-shift-ctrl-f = 'move-node-to-workspace F'
 alt-shift-ctrl-g = 'move-node-to-workspace G'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
-alt-tab = 'workspace-back-and-forth'
+# alt-tab = 'workspace-back-and-forth'
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
@@ -115,10 +134,7 @@ alt-shift-semicolon = 'mode service'
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
-f = [
-  'layout floating tiling',
-  'mode main',
-]
+f = ['layout floating tiling', 'mode main']
 
 
 [[on-window-detected]]
@@ -137,3 +153,36 @@ run = 'layout floating'
 [[on-window-detected]]
 if.window-title-regex-substring = "Karabiner"
 run = 'layout floating'
+
+# Workspace management bindings remain active while QLab is focused;
+# all other main-mode bindings (focus/move/join/swap/resize) are disabled.
+# Mode is switched by ~/.local/bin/aerospace-app-mode.sh via on-focus-changed.
+[mode.passthrough.binding]
+alt-shift-cmd-ctrl-1 = 'workspace 1'
+alt-shift-cmd-ctrl-2 = 'workspace 2'
+alt-shift-cmd-ctrl-3 = 'workspace 3'
+alt-shift-cmd-ctrl-4 = 'workspace 4'
+alt-shift-cmd-ctrl-5 = 'workspace 5'
+alt-shift-cmd-ctrl-6 = 'workspace 6'
+alt-shift-cmd-ctrl-7 = 'workspace 7'
+alt-shift-cmd-ctrl-8 = 'workspace 8'
+alt-shift-cmd-ctrl-9 = 'workspace 9'
+alt-shift-cmd-ctrl-a = 'workspace A'
+alt-shift-cmd-ctrl-s = 'workspace S'
+alt-shift-cmd-ctrl-d = 'workspace D'
+alt-shift-cmd-ctrl-f = 'workspace F'
+alt-shift-cmd-ctrl-g = 'workspace G'
+alt-shift-ctrl-1 = 'move-node-to-workspace 1'
+alt-shift-ctrl-2 = 'move-node-to-workspace 2'
+alt-shift-ctrl-3 = 'move-node-to-workspace 3'
+alt-shift-ctrl-4 = 'move-node-to-workspace 4'
+alt-shift-ctrl-5 = 'move-node-to-workspace 5'
+alt-shift-ctrl-6 = 'move-node-to-workspace 6'
+alt-shift-ctrl-7 = 'move-node-to-workspace 7'
+alt-shift-ctrl-8 = 'move-node-to-workspace 8'
+alt-shift-ctrl-9 = 'move-node-to-workspace 9'
+alt-shift-ctrl-a = 'move-node-to-workspace A'
+alt-shift-ctrl-s = 'move-node-to-workspace S'
+alt-shift-ctrl-d = 'move-node-to-workspace D'
+alt-shift-ctrl-f = 'move-node-to-workspace F'
+alt-shift-ctrl-g = 'move-node-to-workspace G'
