@@ -8,7 +8,7 @@ return {
       opts = function(_, opts)
         table.insert(opts.snippets, {
           require("mini.snippets").gen_loader.from_lang(opts),
-          require("mini.snippets").gen_loader.from_file("~/.config/nvim/lua/snippets/go.json", nil),
+          require("mini.snippets").gen_loader.from_file(vim.fn.stdpath("config") .. "/lua/snippets/go.json", nil),
         })
       end,
     },
