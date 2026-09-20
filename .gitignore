@@ -1,34 +1,42 @@
-.*
-configstore/*
-karabiner/automatic_backups/*
-filezilla/*
-yarn/*
-wireshark/*
+# OS metadata
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+
+# Editor artifacts
+*.swp
+*.swo
+*~
+
+# Logs and Python bytecode
 *.log
-github-copilot/*
-OpenRGB/*.log
-*-lock.*
+__pycache__/
+*.pyc
+*.pyo
 
-tt.*
-.tests
-doc/tags
-debug
-.repro
-foo.*
-*.log
-data
+# Backups and keyboard layout snapshots
+*.bak
+*.bak.*
+bak/
+_bak/
+backup/
+backups/
+/corne/backup_*.vil
+/corne/corne_v*.vil
+/corne/crkbd-lals_v*.vil
+/karabiner/automatic_backups/
 
-*__pycache*
-*bak.*
-pocket-casts-linux/*
-Apple\ Music/*
-Raspberry*
-Trust*
-dconf/*
-*.mdb*
-uv/
+# Local environment files
+.env
+.env.*
+!.env.example
+!.env.template
 
-op/*
-
-karabiner/karabiner.json
-karabiner/automatic_backups
+# OpenCode-generated dependencies and ignore file
+/opencode/node_modules/
+/opencode/package.json
+/opencode/package-lock.json
+/opencode/bun.lock
+/opencode/bun.lockb
+/opencode/.gitignore
