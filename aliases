@@ -12,18 +12,11 @@ command -v yay >/dev/null && syay() { yay -Syu --noconfirm "$@"; }
 # Skip override for Windows hosts which handle TERM differently
 ssh() {
     local host="$1"
-    case "$host" in
-        t1) command ssh "$@" ;;
+    case "$host" in t1) command ssh "$@" ;;
         *) TERM=xterm-256color command ssh "$@" ;;
     esac
 }
 
-# Lazy Loading Thefuck
-fuck() {
-    unset -f fuck
-    eval "$(thefuck --alias)"
-    fuck "$@"
-}
 # send all __pycache__ folders to /tmp
 export PYTHONPYCACHEPREFIX=/tmp
 
