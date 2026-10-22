@@ -12,5 +12,13 @@
     "scrollbar": true,
     "thinking": "show"
   },
-  "animations": true
+  "animations": true,
+  "prompt": {
+    "image_preview": true,
+    "paste": "compact"
+  },
+  "tabs": {
+    "layout": "horizontal",
+    "mode": "auto"
+  }
 }
