@@ -12,6 +12,7 @@ persistent-workspaces = [
   "7",
   "8",
   "9",
+  "0",
   "A",
   "S",
   "D",
@@ -103,6 +104,7 @@ alt-shift-cmd-ctrl-6 = 'workspace 6'
 alt-shift-cmd-ctrl-7 = 'workspace 7'
 alt-shift-cmd-ctrl-8 = 'workspace 8'
 alt-shift-cmd-ctrl-9 = 'workspace 9'
+alt-shift-cmd-ctrl-0 = 'workspace 0'
 alt-shift-cmd-ctrl-a = 'workspace A'
 alt-shift-cmd-ctrl-s = 'workspace S'
 alt-shift-cmd-ctrl-d = 'workspace D'
@@ -118,6 +120,7 @@ alt-shift-ctrl-6 = 'move-node-to-workspace 6'
 alt-shift-ctrl-7 = 'move-node-to-workspace 7'
 alt-shift-ctrl-8 = 'move-node-to-workspace 8'
 alt-shift-ctrl-9 = 'move-node-to-workspace 9'
+alt-shift-ctrl-0 = 'move-node-to-workspace 0'
 alt-shift-ctrl-a = 'move-node-to-workspace A'
 alt-shift-ctrl-s = 'move-node-to-workspace S'
 alt-shift-ctrl-d = 'move-node-to-workspace D'
@@ -167,6 +170,7 @@ alt-shift-cmd-ctrl-6 = 'workspace 6'
 alt-shift-cmd-ctrl-7 = 'workspace 7'
 alt-shift-cmd-ctrl-8 = 'workspace 8'
 alt-shift-cmd-ctrl-9 = 'workspace 9'
+alt-shift-cmd-ctrl-0 = 'workspace 0'
 alt-shift-cmd-ctrl-a = 'workspace A'
 alt-shift-cmd-ctrl-s = 'workspace S'
 alt-shift-cmd-ctrl-d = 'workspace D'
@@ -180,7 +184,7 @@ alt-shift-ctrl-5 = 'move-node-to-workspace 5'
 alt-shift-ctrl-6 = 'move-node-to-workspace 6'
 alt-shift-ctrl-7 = 'move-node-to-workspace 7'
 alt-shift-ctrl-8 = 'move-node-to-workspace 8'
-alt-shift-ctrl-9 = 'move-node-to-workspace 9'
+alt-shift-ctrl-0 = 'move-node-to-workspace 0'
 alt-shift-ctrl-a = 'move-node-to-workspace A'
 alt-shift-ctrl-s = 'move-node-to-workspace S'
 alt-shift-ctrl-d = 'move-node-to-workspace D'
