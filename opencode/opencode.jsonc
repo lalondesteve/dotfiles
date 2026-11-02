@@ -102,16 +102,18 @@
       },
       "resolume-arena": {
         "type": "local",
-        "command": ["/Applications/Resolume Arena/mcp/resolume_arena_mcp_server"],
+        "command": [
+          "node",
+          "-e",
+          "const {spawn}=require('child_process');const p=process.platform==='darwin'?'/Applications/Resolume Arena/mcp/resolume_arena_mcp_server':process.platform==='win32'?'C:/Program Files/Resolume Arena/mcp/resolume_arena_mcp_server.exe':null;if(!p){process.exit(1);}spawn(p,[],{stdio:'inherit'}).on('exit',c=>process.exit(c));"
+        ],
       },
       "openscreen": {
         "type": "local",
         "command": [
-          "/usr/bin/env",
-          "-u",
-          "ELECTRON_RUN_AS_NODE",
-          "/Applications/Openscreen.app/Contents/MacOS/Openscreen",
-          "mcp",
+          "node",
+          "-e",
+          "const{spawn}=require('child_process');const fs=require('fs');const path=require('path');if(process.platform==='darwin'){const p='/Applications/Openscreen.app/Contents/MacOS/Openscreen';if(!fs.existsSync(p)){process.exit(0);}spawn('/usr/bin/env',['-u','ELECTRON_RUN_AS_NODE',p,'mcp'],{stdio:'inherit'}).on('exit',c=>process.exit(c));}else if(process.platform==='win32'){const candidates=[path.join(process.env.LOCALAPPDATA||'','Programs','Openscreen','Openscreen.exe'),'C:/Program Files/Openscreen/Openscreen.exe'];const exe=candidates.find(x=>fs.existsSync(x));if(!exe){process.exit(0);}spawn(exe,['mcp'],{stdio:'inherit'}).on('exit',c=>process.exit(c));}else{process.exit(0);}"
         ],
       },
       "rea": {
@@ -123,6 +125,17 @@
           "mcp"
         ],
         "disabled": false
+      },
+      "windows-mcp": {
+        "type": "local",
+        "command": [
+          "C:\\Users\\steve\\AppData\\Local\\Microsoft\\WinGet\\Links\\uvx.exe",
+          "windows-mcp",
+          "serve"
+        ],
+        "environment": {
+          "ANONYMIZED_TELEMETRY": "false"
+        }
       },
     },
   },
