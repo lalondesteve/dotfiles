@@ -1,0 +1,7 @@
+{
+  "name": "opencode-cliproxy-discovery",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": { ".": "./index.js" },
+  "dependencies": { "@opencode/plugin": "2.2.5" }
+}

@@ -3,97 +3,15 @@
   "experimental": {
     "todo": true,
   },
-  "providers": {
-    "cliproxy": {
-      "package": "@opencode/ai/providers/openai-compatible",
-      "settings": {
-        "baseURL": "http://cliproxy.netbird.cloud:8317/v1",
-      },
-      "models": {
-        "gpt-6-luna": {
-          "name": "GPT-6 Luna",
-          "variants": [
-            {
-              "id": "low",
-              "settings": {
-                "reasoningEffort": "low",
-              },
-            },
-            {
-              "id": "medium",
-              "settings": {
-                "reasoningEffort": "medium",
-              },
-            },
-            {
-              "id": "high",
-              "settings": {
-                "reasoningEffort": "high",
-              },
-            },
-            {
-              "id": "xhigh",
-              "settings": {
-                "reasoningEffort": "xhigh",
-              },
-            },
-          ],
-        },
-        "gpt-6.1-terra": {
-          "name": "GPT-6.1 Terra",
-          "variants": [
-            {
-              "id": "low",
-              "settings": {
-                "reasoningEffort": "low",
-              },
-            },
-            {
-              "id": "medium",
-              "settings": {
-                "reasoningEffort": "medium",
-              },
-            },
-            {
-              "id": "high",
-              "settings": {
-                "reasoningEffort": "high",
-              },
-            },
-          ],
-        },
-        "gpt-6.1-sol": {
-          "name": "GPT-6.1 Sol",
-          "variants": [
-            {
-              "id": "medium",
-              "settings": {
-                "reasoningEffort": "medium",
-              },
-            },
-            {
-              "id": "high",
-              "settings": {
-                "reasoningEffort": "high",
-              },
-            },
-            {
-              "id": "xhigh",
-              "settings": {
-                "reasoningEffort": "xhigh",
-              },
-            },
-            {
-              "id": "max",
-              "settings": {
-                "reasoningEffort": "max",
-              },
-            },
-          ],
-        },
+  "plugins": [
+    {
+      "package": "./plugins/cliproxy",
+      "options": {
+        "baseURL": "https://cliproxy.eu1.netbird.services/v1",
+        "refreshMinutes": 15,
       },
     },
-  },
+  ],
   "mcp": {
     "servers": {
       "macos-computer-use": {
@@ -116,13 +34,8 @@
       },
       "rea": {
         "type": "local",
-        "command": [
-          "npx",
-          "-y",
-          "rea-agents@6.8.0",
-          "mcp"
-        ],
-        "disabled": false
+        "command": ["npx", "-y", "rea-agents@6.8.0", "mcp"],
+        "disabled": false,
       },
     },
   },
@@ -130,7 +43,7 @@
     "code_worker": {
       "description": "Mechanical edits with a known solution: renames, boilerplate, config changes, and isolated fixes. Pass files, exact changes, acceptance criteria, exclusions, and a verification command; it has no caller context. Use senior_implementer for design or cross-module judgment.",
       "mode": "subagent",
-      "model": "cliproxy/gpt-6.1-sol#medium",
+      "model": "cliproxy/gpt-6.1-terra#high",
       "system": "Make only the specified changes. Read affected code and follow its conventions. Stop and report blockers if work requires product, interface, or architectural decisions, or changes outside the specified files.\n\nHonor acceptance criteria and exclusions. Add a focused test for behavior changes, or explain why no useful test seam exists. Avoid unrelated cleanup, formatting, or refactoring. Never revert or overwrite others' work.\n\nCheck the final diff against each criterion and run the supplied verification. Claim a command passed only if you ran it and saw it pass.\n\nReport: 1. Changed files and changes. 2. Evidence for each criterion. 3. Commands run and results. 4. Blockers and remaining risks.",
     },
     "general": {
