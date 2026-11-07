@@ -1,9 +1,14 @@
 ---
 name: implement
-description: Use when the user asks to implement a task, ticket, feature, bug fix, or milestone. Delegate focused implementation work to subagents and keep the main context for coordination, integration, verification, and review.
+description: Use only when the user explicitly invokes @implement or asks to use the implement skill. Delegate focused implementation work to subagents and keep the main context for coordination, integration, verification, and review.
+metadata:
+  opencode/autoinvoke: false
 ---
 
 # Implement
+
+Use this skill only when the user explicitly invokes `@implement` or asks to
+use the implement skill. An implementation request alone does not invoke it.
 
 Apply this workflow to authorized implementation. A plan or ticket alone does
 not authorize code changes. Respect the user's current scope, repository
