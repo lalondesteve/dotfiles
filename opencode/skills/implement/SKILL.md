@@ -19,6 +19,8 @@ status. Reuse established decisions instead of reopening them. Investigate
 questions the repository can answer; ask the user about consequential choices
 that remain unresolved.
 
+In T3 Code, use orchestrator_capabilities to resolve the models, then delegate_task to start one delegate per model in parallel.
+
 ## Keep changes small
 
 When modifying existing code, prefer the smallest coherent change that meets
@@ -47,7 +49,7 @@ end-to-end slices.
 Delegate implementation to focused subagents by default. Use
 `senior_implementer` for behavioral changes, debugging, and non-trivial
 refactors; use `code_worker` for isolated edits whose exact change is known.
-Use read-only exploration or research agents for bounded questions. Follow
+Use read-only exploration or research agents for bounded questions. In those cases the preferred models are opencode-go/gpt-6-luna#medium or opencode-go/glm-5.3-flash#high. Follow
 the available agents' descriptions and permissions rather than hard-coding
 models or assuming a particular roster exists.
 
