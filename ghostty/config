@@ -4,7 +4,7 @@ theme=TokyoNight Night
 # Font
 font-family=Monaspace Neon
 font-style=Regular
-font-size=13
+font-size=14
 
 #window
 window-theme=ghostty
