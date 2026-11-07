@@ -17,8 +17,8 @@ ssh() {
     esac
 }
 
-# send all __pycache__ folders to /tmp
-export PYTHONPYCACHEPREFIX=/tmp
+# send all __pycache__ folders to /tmp/pycache
+# (moved to ~/.zshenv so non-interactive shells get it too)/pycache
 
 if [ -n "$ZSH_VERSION" ]; then
     eval "$(starship init zsh)"
@@ -49,20 +49,6 @@ command -v brew >/dev/null && {
   NVM_PREFIX=$(brew --prefix nvm)
   [[ -s "$NVM_PREFIX/nvm.sh" ]] && \. "$NVM_PREFIX/nvm.sh"
   [[ -s "$NVM_PREFIX/etc/bash_completion.d/nvm" ]] && \. "$NVM_PREFIX/etc/bash_completion.d/nvm"
-}
-
-opa(){ opencode attach "$@":4096; }
-opaa(){ opencode attach "$@":4444; }
-
-alias ops='opencode serve --hostname 0.0.0.0'
-alias opss='opencode server --hostname 0.0.0.0 --port 4444'
-
-opc() {
-    opencode attach $1:4096
-}
-
-opcc() {
-    opencode attach $1:4444
 }
 
 rmux() {
